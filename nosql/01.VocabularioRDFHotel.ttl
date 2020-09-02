@@ -1,0 +1,459 @@
+@prefix :        <vocab/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+
+:precio_precio
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :precio ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "precio_precio" ;
+      rdfs:range xsd:integer .
+
+:cliente_dni
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :cliente ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "cliente_dni" ;
+      rdfs:range xsd:string .
+
+:empleado
+      a       owl:Class , rdfs:Class ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "empleado" .
+
+:reserva_dni
+      a       owl:DatatypeProperty , rdf:Property , owl:ObjectProperty ;
+      rdfs:domain :reserva ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "reserva_dni" ;
+      rdfs:range :cliente , xsd:string .
+
+:habitacion_bar
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :habitacion ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "habitacion_bar" ;
+      rdfs:range xsd:string .
+
+:proveedor_direccion
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :proveedor ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "proveedor_direccion" ;
+      rdfs:range xsd:string .
+
+:cliente_domicilio
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :cliente ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "cliente_domicilio" ;
+      rdfs:range xsd:string .
+
+:formapago_comision
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :formapago ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "formapago_comision" ;
+      rdfs:range xsd:integer .
+
+:incluye_codigof
+      a       owl:DatatypeProperty , rdf:Property , owl:ObjectProperty ;
+      rdfs:domain :incluye ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "incluye_codigof" ;
+      rdfs:range :factura , xsd:integer .
+
+:habitacion
+      a       owl:Class , rdfs:Class ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "habitacion" .
+
+:factura_salida
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :factura ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "factura_salida" ;
+      rdfs:range xsd:dateTime .
+
+:cliente_telefono
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :cliente ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "cliente_telefono" ;
+      rdfs:range xsd:string .
+
+:factura_prov_nif
+      a       owl:DatatypeProperty , rdf:Property , owl:ObjectProperty ;
+      rdfs:domain :factura_prov ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "factura_prov_nif" ;
+      rdfs:range xsd:string , :proveedor .
+
+:empleado_nombre
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :empleado ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "empleado_nombre" ;
+      rdfs:range xsd:string .
+
+:empleado_incorporacion
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :empleado ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "empleado_incorporacion" ;
+      rdfs:range xsd:dateTime .
+
+:incluye_fecha
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :incluye ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "incluye_fecha" ;
+      rdfs:range xsd:dateTime .
+
+:servicio_cods
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :servicio ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "servicio_cods" ;
+      rdfs:range xsd:integer .
+
+:servicio_costeinterno
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :servicio ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "servicio_costeinterno" ;
+      rdfs:range xsd:integer .
+
+:incluye
+      a       owl:Class , rdfs:Class ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "incluye" .
+
+:usa_fecha
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :usa ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "usa_fecha" ;
+      rdfs:range xsd:dateTime .
+
+:factura_prov_codfp
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :factura_prov ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "factura_prov_codfp" ;
+      rdfs:range xsd:integer .
+
+:limpieza_numero
+      a       owl:DatatypeProperty , rdf:Property , owl:ObjectProperty ;
+      rdfs:domain :limpieza ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "limpieza_numero" ;
+      rdfs:range :habitacion , xsd:integer .
+
+:factura_forma
+      a       owl:DatatypeProperty , rdf:Property , owl:ObjectProperty ;
+      rdfs:domain :factura ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "factura_forma" ;
+      rdfs:range xsd:string , :formapago .
+
+:habitacion_numero
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :habitacion ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "habitacion_numero" ;
+      rdfs:range xsd:integer .
+
+:factura_prov_numreg
+      a       owl:DatatypeProperty , rdf:Property , owl:ObjectProperty ;
+      rdfs:domain :factura_prov ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "factura_prov_numreg" ;
+      rdfs:range :empleado , xsd:integer .
+
+:usa_servicio_cods
+      a       owl:DatatypeProperty , rdf:Property , owl:ObjectProperty ;
+      rdfs:domain :usa ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "usa_servicio_cods" ;
+      rdfs:range :servicio , xsd:integer .
+
+:proveedor_numreg
+      a       owl:DatatypeProperty , rdf:Property , owl:ObjectProperty ;
+      rdfs:domain :proveedor ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "proveedor_numreg" ;
+      rdfs:range :empleado , xsd:integer .
+
+:proveedor_nombre
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :proveedor ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "proveedor_nombre" ;
+      rdfs:range xsd:string .
+
+:habitacion_tipo
+      a       owl:DatatypeProperty , rdf:Property , owl:ObjectProperty ;
+      rdfs:domain :habitacion ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "habitacion_tipo" ;
+      rdfs:range xsd:string , :precio .
+
+:habitacion_terraza
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :habitacion ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "habitacion_terraza" ;
+      rdfs:range xsd:string .
+
+:limpieza
+      a       owl:Class , rdfs:Class ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "limpieza" .
+
+:reserva_entrada
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :reserva ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "reserva_entrada" ;
+      rdfs:range xsd:dateTime .
+
+:limpieza_numreg
+      a       owl:DatatypeProperty , rdf:Property , owl:ObjectProperty ;
+      rdfs:domain :limpieza ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "limpieza_numreg" ;
+      rdfs:range :empleado , xsd:integer .
+
+:empleado_sueldo
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :empleado ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "empleado_sueldo" ;
+      rdfs:range xsd:integer .
+
+:factura_supletoria
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :factura ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "factura_supletoria" ;
+      rdfs:range xsd:integer .
+
+:limpieza_fecha
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :limpieza ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "limpieza_fecha" ;
+      rdfs:range xsd:dateTime .
+
+:habitacion_superficie
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :habitacion ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "habitacion_superficie" ;
+      rdfs:range xsd:integer .
+
+:proveedor
+      a       owl:Class , rdfs:Class ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "proveedor" .
+
+:usa_cods
+      a       owl:DatatypeProperty , rdf:Property , owl:ObjectProperty ;
+      rdfs:domain :usa ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "usa_cods" ;
+      rdfs:range :servicio , xsd:integer .
+
+:factura_numero
+      a       owl:DatatypeProperty , rdf:Property , owl:ObjectProperty ;
+      rdfs:domain :factura ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "factura_numero" ;
+      rdfs:range :habitacion , xsd:integer .
+
+:factura
+      a       owl:Class , rdfs:Class ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "factura" .
+
+:incluye_coste
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :incluye ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "incluye_coste" ;
+      rdfs:range xsd:integer .
+
+:habitacion_puedesupletoria
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :habitacion ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "habitacion_puedesupletoria" ;
+      rdfs:range xsd:string .
+
+:empleado_cods
+      a       owl:DatatypeProperty , rdf:Property , owl:ObjectProperty ;
+      rdfs:domain :empleado ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "empleado_cods" ;
+      rdfs:range :servicio , xsd:integer .
+
+:formapago
+      a       owl:Class , rdfs:Class ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "formapago" .
+
+:factura_total
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :factura ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "factura_total" ;
+      rdfs:range xsd:double .
+
+:formapago_forma
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :formapago ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "formapago_forma" ;
+      rdfs:range xsd:string .
+
+:proveedor_nif
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :proveedor ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "proveedor_nif" ;
+      rdfs:range xsd:string .
+
+:cliente
+      a       owl:Class , rdfs:Class ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "cliente" .
+
+:factura_dni
+      a       owl:DatatypeProperty , rdf:Property , owl:ObjectProperty ;
+      rdfs:domain :factura ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "factura_dni" ;
+      rdfs:range :cliente , xsd:string .
+
+:factura_prov_importe
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :factura_prov ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "factura_prov_importe" ;
+      rdfs:range xsd:integer .
+
+:factura_prov_fecha
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :factura_prov ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "factura_prov_fecha" ;
+      rdfs:range xsd:dateTime .
+
+:reserva
+      a       owl:Class , rdfs:Class ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "reserva" .
+
+:reserva_salida
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :reserva ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "reserva_salida" ;
+      rdfs:range xsd:dateTime .
+
+:usa  a       owl:Class , rdfs:Class ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "usa" .
+
+:factura_entrada
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :factura ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "factura_entrada" ;
+      rdfs:range xsd:dateTime .
+
+:servicio_descripcion
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :servicio ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "servicio_descripcion" ;
+      rdfs:range xsd:string .
+
+:cliente_nombre
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :cliente ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "cliente_nombre" ;
+      rdfs:range xsd:string .
+
+:cliente_apellidos
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :cliente ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "cliente_apellidos" ;
+      rdfs:range xsd:string .
+
+:precio
+      a       owl:Class , rdfs:Class ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "precio" .
+
+:precio_tipo
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :precio ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "precio_tipo" ;
+      rdfs:range xsd:string .
+
+:factura_codigof
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :factura ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "factura_codigof" ;
+      rdfs:range xsd:integer .
+
+:incluye_cods
+      a       owl:DatatypeProperty , rdf:Property , owl:ObjectProperty ;
+      rdfs:domain :incluye ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "incluye_cods" ;
+      rdfs:range :servicio , xsd:integer .
+
+:factura_prov
+      a       owl:Class , rdfs:Class ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "factura_prov" .
+
+:     a       owl:Ontology ;
+      dc:creator "D2RQ Mapping Generator" ;
+      owl:imports dc: .
+
+:reserva_numero
+      a       owl:DatatypeProperty , rdf:Property , owl:ObjectProperty ;
+      rdfs:domain :reserva ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "reserva_numero" ;
+      rdfs:range :habitacion , xsd:integer .
+
+:servicio_numreg
+      a       owl:DatatypeProperty , rdf:Property , owl:ObjectProperty ;
+      rdfs:domain :servicio ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "servicio_numreg" ;
+      rdfs:range :empleado , xsd:integer .
+
+:servicio
+      a       owl:Class , rdfs:Class ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "servicio" .
+
+:empleado_numreg
+      a       owl:DatatypeProperty , rdf:Property ;
+      rdfs:domain :empleado ;
+      rdfs:isDefinedBy : ;
+      rdfs:label "empleado_numreg" ;
+      rdfs:range xsd:integer .

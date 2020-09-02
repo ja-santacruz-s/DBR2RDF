@@ -1,0 +1,16 @@
+//--------------- VOCABULARIO
+
+generate-mapping -u postgres -p 123abc -d org.postgresql.Driver --schema public --tables cliente,empleado,factura,factura_prov,formapago,habitacion,incluye,limpieza,precio,proveedor,reserva,servicio,usa --w3c -v -o hotel-voc.ttl --verbose --debug jdbc:postgresql://localhost:5432/hotel
+
+
+//---------------- ESQUEMA
+
+generate-mapping -u postgres -p 123abc -d org.postgresql.Driver --schema public --tables cliente,empleado,factura,factura_prov,formapago,habitacion,incluye,limpieza,precio,proveedor,reserva,servicio,usa --w3c -o hotel-esq.ttl --verbose --debug jdbc:postgresql://localhost:5432/hotel
+
+//---------------- DATOS
+
+dump-rdf -f TURTLE -b http://hotel/ -o hotel-dat-0.ttl --verbose --debug hotel-esq.ttl
+
+dump-rdf -f TURTLE -o hotel-dat-1.ttl --verbose --debug -u postgres -p 123abc -d org.postgresql.Driver jdbc:postgresql://localhost:5432/hotel
+
+dump-rdf -f TURTLE -b http://hotel/ -o hotel-dat-2.ttl --verbose --debug -u postgres -p 123abc -d org.postgresql.Driver jdbc:postgresql://localhost:5432/hotel

@@ -1,0 +1,2379 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix vocab:   <http://hotel/vocab/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix map:     <http://hotel/#> .
+@prefix db:      <http://hotel/> .
+
+<http://hotel/factura_prov/codfp=9>
+      a       db:factura_prov ;
+      <http://hotel/factura_prov#codfp>
+              9 ;
+      <http://hotel/factura_prov#fecha>
+              "2010-03-21T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura_prov#importe>
+              1235 ;
+      <http://hotel/factura_prov#nif>
+              "545454Q" ;
+      <http://hotel/factura_prov#numreg>
+              12 ;
+      <http://hotel/factura_prov#ref-nif>
+              <http://hotel/proveedor/nif=545454Q> ;
+      <http://hotel/factura_prov#ref-numreg>
+              <http://hotel/empleado/numreg=12> .
+
+<http://hotel/incluye/codigof=3;cods=3;fecha=2010-09-01T00:00:00>
+      a       db:incluye ;
+      <http://hotel/incluye#codigof>
+              3 ;
+      <http://hotel/incluye#cods>
+              3 ;
+      <http://hotel/incluye#coste>
+              25 ;
+      <http://hotel/incluye#fecha>
+              "2010-09-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/incluye#ref-codigof>
+              <http://hotel/factura/codigof=3> ;
+      <http://hotel/incluye#ref-cods>
+              <http://hotel/servicio/cods=3> .
+
+<http://hotel/incluye/codigof=5;cods=5;fecha=2010-11-03T00:00:00>
+      a       db:incluye ;
+      <http://hotel/incluye#codigof>
+              5 ;
+      <http://hotel/incluye#cods>
+              5 ;
+      <http://hotel/incluye#coste>
+              33 ;
+      <http://hotel/incluye#fecha>
+              "2010-11-03T00:00:00"^^xsd:dateTime ;
+      <http://hotel/incluye#ref-codigof>
+              <http://hotel/factura/codigof=5> ;
+      <http://hotel/incluye#ref-cods>
+              <http://hotel/servicio/cods=5> .
+
+<http://hotel/proveedor/nif=545454Q>
+      a       db:proveedor ;
+      <http://hotel/proveedor#direccion>
+              "Colombiana 34                 " ;
+      <http://hotel/proveedor#nif>
+              "545454Q" ;
+      <http://hotel/proveedor#nombre>
+              "Prd. Quimicos SA" ;
+      <http://hotel/proveedor#numreg>
+              12 ;
+      <http://hotel/proveedor#ref-numreg>
+              <http://hotel/empleado/numreg=12> .
+
+<http://hotel/limpieza/numreg=10;numero=301;fecha=2010-10-01T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-10-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              301 ;
+      <http://hotel/limpieza#numreg>
+              10 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=301> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=10> .
+
+<http://hotel/empleado/numreg=4>
+      a       db:empleado ;
+      <http://hotel/empleado#cods>
+              4 ;
+      <http://hotel/empleado#incorporacion>
+              "2000-01-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/empleado#nombre>
+              "Ana Troncoso Calvo" ;
+      <http://hotel/empleado#numreg>
+              4 ;
+      <http://hotel/empleado#ref-cods>
+              <http://hotel/servicio/cods=4> ;
+      <http://hotel/empleado#sueldo>
+              900 .
+
+<http://hotel/factura_prov/codfp=1>
+      a       db:factura_prov ;
+      <http://hotel/factura_prov#codfp>
+              1 ;
+      <http://hotel/factura_prov#fecha>
+              "2010-03-21T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura_prov#importe>
+              1500 ;
+      <http://hotel/factura_prov#nif>
+              "121212T" ;
+      <http://hotel/factura_prov#numreg>
+              8 ;
+      <http://hotel/factura_prov#ref-nif>
+              <http://hotel/proveedor/nif=121212T> ;
+      <http://hotel/factura_prov#ref-numreg>
+              <http://hotel/empleado/numreg=8> .
+
+<http://hotel/usa/cods=5;servicio_cods=6;fecha=2010-09-25T00:00:00>
+      a       db:usa ;
+      <http://hotel/usa#cods>
+              5 ;
+      <http://hotel/usa#fecha>
+              "2010-09-25T00:00:00"^^xsd:dateTime ;
+      <http://hotel/usa#ref-cods>
+              <http://hotel/servicio/cods=5> ;
+      <http://hotel/usa#ref-servicio_cods>
+              <http://hotel/servicio/cods=6> ;
+      <http://hotel/usa#servicio_cods>
+              6 .
+
+<http://hotel/limpieza/numreg=10;numero=202;fecha=2010-09-23T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-09-23T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              202 ;
+      <http://hotel/limpieza#numreg>
+              10 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=202> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=10> .
+
+<http://hotel/factura/codigof=9>
+      a       db:factura ;
+      <http://hotel/factura#codigof>
+              9 ;
+      <http://hotel/factura#dni>
+              "999999   " ;
+      <http://hotel/factura#entrada>
+              "2010-05-15T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#forma>
+              "tarjeta" ;
+      <http://hotel/factura#numero>
+              301 ;
+      <http://hotel/factura#ref-dni>
+              <http://hotel/cliente/dni=999999%20%20%20> ;
+      <http://hotel/factura#ref-forma>
+              <http://hotel/formapago/forma=tarjeta> ;
+      <http://hotel/factura#ref-numero>
+              <http://hotel/habitacion/numero=301> ;
+      <http://hotel/factura#salida>
+              "2010-05-17T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#supletoria>
+              0 ;
+      <http://hotel/factura#total>
+              218.0E0 .
+
+<http://hotel/limpieza/numreg=11;numero=202;fecha=2010-09-10T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-09-10T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              202 ;
+      <http://hotel/limpieza#numreg>
+              11 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=202> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=11> .
+
+<http://hotel/factura/codigof=0>
+      a       db:factura ;
+      <http://hotel/factura#codigof>
+              0 ;
+      <http://hotel/factura#dni>
+              "999999   " ;
+      <http://hotel/factura#entrada>
+              "2010-01-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#forma>
+              "tarjeta" ;
+      <http://hotel/factura#numero>
+              300 ;
+      <http://hotel/factura#ref-dni>
+              <http://hotel/cliente/dni=999999%20%20%20> ;
+      <http://hotel/factura#ref-forma>
+              <http://hotel/formapago/forma=tarjeta> ;
+      <http://hotel/factura#ref-numero>
+              <http://hotel/habitacion/numero=300> ;
+      <http://hotel/factura#salida>
+              "2010-01-05T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#supletoria>
+              0 ;
+      <http://hotel/factura#total>
+              220.0E0 .
+
+<http://hotel/habitacion/numero=301>
+      a       db:habitacion ;
+      <http://hotel/habitacion#bar>
+              "SI" ;
+      <http://hotel/habitacion#numero>
+              301 ;
+      <http://hotel/habitacion#puedesupletoria>
+              "SI" ;
+      <http://hotel/habitacion#ref-tipo>
+              <http://hotel/precio/tipo=doble> ;
+      <http://hotel/habitacion#superficie>
+              17 ;
+      <http://hotel/habitacion#terraza>
+              "SI" ;
+      <http://hotel/habitacion#tipo>
+              "doble" .
+
+<http://hotel/usa/cods=4;servicio_cods=3;fecha=2010-09-01T00:00:00>
+      a       db:usa ;
+      <http://hotel/usa#cods>
+              4 ;
+      <http://hotel/usa#fecha>
+              "2010-09-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/usa#ref-cods>
+              <http://hotel/servicio/cods=4> ;
+      <http://hotel/usa#ref-servicio_cods>
+              <http://hotel/servicio/cods=3> ;
+      <http://hotel/usa#servicio_cods>
+              3 .
+
+<http://hotel/limpieza/numreg=10;numero=101;fecha=2010-08-21T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-08-21T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              101 ;
+      <http://hotel/limpieza#numreg>
+              10 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=101> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=10> .
+
+<http://hotel/incluye/codigof=1;cods=1;fecha=2010-01-01T00:00:00>
+      a       db:incluye ;
+      <http://hotel/incluye#codigof>
+              1 ;
+      <http://hotel/incluye#cods>
+              1 ;
+      <http://hotel/incluye#coste>
+              25 ;
+      <http://hotel/incluye#fecha>
+              "2010-01-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/incluye#ref-codigof>
+              <http://hotel/factura/codigof=1> ;
+      <http://hotel/incluye#ref-cods>
+              <http://hotel/servicio/cods=1> .
+
+<http://hotel/habitacion/numero=204>
+      a       db:habitacion ;
+      <http://hotel/habitacion#bar>
+              "SI" ;
+      <http://hotel/habitacion#numero>
+              204 ;
+      <http://hotel/habitacion#puedesupletoria>
+              "SI" ;
+      <http://hotel/habitacion#ref-tipo>
+              <http://hotel/precio/tipo=doble> ;
+      <http://hotel/habitacion#superficie>
+              17 ;
+      <http://hotel/habitacion#terraza>
+              "SI" ;
+      <http://hotel/habitacion#tipo>
+              "doble" .
+
+<http://hotel/formapago/forma=talon>
+      a       db:formapago ;
+      <http://hotel/formapago#comision>
+              2 ;
+      <http://hotel/formapago#forma>
+              "talon" .
+
+<http://hotel/incluye/codigof=3;cods=5;fecha=2010-09-02T00:00:00>
+      a       db:incluye ;
+      <http://hotel/incluye#codigof>
+              3 ;
+      <http://hotel/incluye#cods>
+              5 ;
+      <http://hotel/incluye#coste>
+              43 ;
+      <http://hotel/incluye#fecha>
+              "2010-09-02T00:00:00"^^xsd:dateTime ;
+      <http://hotel/incluye#ref-codigof>
+              <http://hotel/factura/codigof=3> ;
+      <http://hotel/incluye#ref-cods>
+              <http://hotel/servicio/cods=5> .
+
+<http://hotel/incluye/codigof=5;cods=3;fecha=2010-11-02T00:00:00>
+      a       db:incluye ;
+      <http://hotel/incluye#codigof>
+              5 ;
+      <http://hotel/incluye#cods>
+              3 ;
+      <http://hotel/incluye#coste>
+              13 ;
+      <http://hotel/incluye#fecha>
+              "2010-11-02T00:00:00"^^xsd:dateTime ;
+      <http://hotel/incluye#ref-codigof>
+              <http://hotel/factura/codigof=5> ;
+      <http://hotel/incluye#ref-cods>
+              <http://hotel/servicio/cods=3> .
+
+<http://hotel/servicio/cods=6>
+      a       db:servicio ;
+      <http://hotel/servicio#cods>
+              6 ;
+      <http://hotel/servicio#costeinterno>
+              25 ;
+      <http://hotel/servicio#descripcion>
+              "floristeria    " ;
+      <http://hotel/servicio#numreg>
+              9 ;
+      <http://hotel/servicio#ref-numreg>
+              <http://hotel/empleado/numreg=9> .
+
+<http://hotel/incluye/codigof=13;cods=2;fecha=2010-05-03T00:00:00>
+      a       db:incluye ;
+      <http://hotel/incluye#codigof>
+              13 ;
+      <http://hotel/incluye#cods>
+              2 ;
+      <http://hotel/incluye#coste>
+              10 ;
+      <http://hotel/incluye#fecha>
+              "2010-05-03T00:00:00"^^xsd:dateTime ;
+      <http://hotel/incluye#ref-codigof>
+              <http://hotel/factura/codigof=13> ;
+      <http://hotel/incluye#ref-cods>
+              <http://hotel/servicio/cods=2> .
+
+<http://hotel/factura/codigof=14>
+      a       db:factura ;
+      <http://hotel/factura#codigof>
+              14 ;
+      <http://hotel/factura#dni>
+              "555555   " ;
+      <http://hotel/factura#entrada>
+              "2010-06-06T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#forma>
+              "tarjeta" ;
+      <http://hotel/factura#numero>
+              203 ;
+      <http://hotel/factura#ref-dni>
+              <http://hotel/cliente/dni=555555%20%20%20> ;
+      <http://hotel/factura#ref-forma>
+              <http://hotel/formapago/forma=tarjeta> ;
+      <http://hotel/factura#ref-numero>
+              <http://hotel/habitacion/numero=203> ;
+      <http://hotel/factura#salida>
+              "2010-06-11T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#supletoria>
+              0 ;
+      <http://hotel/factura#total>
+              375.0E0 .
+
+<http://hotel/incluye/codigof=17;cods=1;fecha=2010-08-20T00:00:00>
+      a       db:incluye ;
+      <http://hotel/incluye#codigof>
+              17 ;
+      <http://hotel/incluye#cods>
+              1 ;
+      <http://hotel/incluye#coste>
+              10 ;
+      <http://hotel/incluye#fecha>
+              "2010-08-20T00:00:00"^^xsd:dateTime ;
+      <http://hotel/incluye#ref-codigof>
+              <http://hotel/factura/codigof=17> ;
+      <http://hotel/incluye#ref-cods>
+              <http://hotel/servicio/cods=1> .
+
+<http://hotel/incluye/codigof=3;cods=3;fecha=2010-09-02T00:00:00>
+      a       db:incluye ;
+      <http://hotel/incluye#codigof>
+              3 ;
+      <http://hotel/incluye#cods>
+              3 ;
+      <http://hotel/incluye#coste>
+              25 ;
+      <http://hotel/incluye#fecha>
+              "2010-09-02T00:00:00"^^xsd:dateTime ;
+      <http://hotel/incluye#ref-codigof>
+              <http://hotel/factura/codigof=3> ;
+      <http://hotel/incluye#ref-cods>
+              <http://hotel/servicio/cods=3> .
+
+<http://hotel/proveedor/nif=121212T>
+      a       db:proveedor ;
+      <http://hotel/proveedor#direccion>
+              "Plaza de los de Acá 20        " ;
+      <http://hotel/proveedor#nif>
+              "121212T" ;
+      <http://hotel/proveedor#nombre>
+              "Carnes SA" ;
+      <http://hotel/proveedor#numreg>
+              8 ;
+      <http://hotel/proveedor#ref-numreg>
+              <http://hotel/empleado/numreg=8> .
+
+<http://hotel/limpieza/numreg=12;numero=202;fecha=2010-09-11T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-09-11T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              202 ;
+      <http://hotel/limpieza#numreg>
+              12 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=202> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=12> .
+
+<http://hotel/proveedor/nif=343434L>
+      a       db:proveedor ;
+      <http://hotel/proveedor#direccion>
+              "Calle del Pueblo 30, 1º       " ;
+      <http://hotel/proveedor#nif>
+              "343434L" ;
+      <http://hotel/proveedor#nombre>
+              "Logística Pérez" ;
+      <http://hotel/proveedor#numreg>
+              1 ;
+      <http://hotel/proveedor#ref-numreg>
+              <http://hotel/empleado/numreg=1> .
+
+<http://hotel/incluye/codigof=3;cods=1;fecha=2010-09-01T00:00:00>
+      a       db:incluye ;
+      <http://hotel/incluye#codigof>
+              3 ;
+      <http://hotel/incluye#cods>
+              1 ;
+      <http://hotel/incluye#coste>
+              10 ;
+      <http://hotel/incluye#fecha>
+              "2010-09-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/incluye#ref-codigof>
+              <http://hotel/factura/codigof=3> ;
+      <http://hotel/incluye#ref-cods>
+              <http://hotel/servicio/cods=1> .
+
+<http://hotel/incluye/codigof=3;cods=2;fecha=2010-09-03T00:00:00>
+      a       db:incluye ;
+      <http://hotel/incluye#codigof>
+              3 ;
+      <http://hotel/incluye#cods>
+              2 ;
+      <http://hotel/incluye#coste>
+              20 ;
+      <http://hotel/incluye#fecha>
+              "2010-09-03T00:00:00"^^xsd:dateTime ;
+      <http://hotel/incluye#ref-codigof>
+              <http://hotel/factura/codigof=3> ;
+      <http://hotel/incluye#ref-cods>
+              <http://hotel/servicio/cods=2> .
+
+<http://hotel/empleado/numreg=5>
+      a       db:empleado ;
+      <http://hotel/empleado#cods>
+              1 ;
+      <http://hotel/empleado#incorporacion>
+              "2002-09-13T00:00:00"^^xsd:dateTime ;
+      <http://hotel/empleado#nombre>
+              "Alba Troncoso Calvo" ;
+      <http://hotel/empleado#numreg>
+              5 ;
+      <http://hotel/empleado#ref-cods>
+              <http://hotel/servicio/cods=1> .
+
+<http://hotel/factura_prov/codfp=2>
+      a       db:factura_prov ;
+      <http://hotel/factura_prov#codfp>
+              2 ;
+      <http://hotel/factura_prov#fecha>
+              "2010-04-21T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura_prov#importe>
+              1000 ;
+      <http://hotel/factura_prov#nif>
+              "121212T" ;
+      <http://hotel/factura_prov#numreg>
+              8 ;
+      <http://hotel/factura_prov#ref-nif>
+              <http://hotel/proveedor/nif=121212T> ;
+      <http://hotel/factura_prov#ref-numreg>
+              <http://hotel/empleado/numreg=8> .
+
+<http://hotel/incluye/codigof=5;cods=5;fecha=2010-11-04T00:00:00>
+      a       db:incluye ;
+      <http://hotel/incluye#codigof>
+              5 ;
+      <http://hotel/incluye#cods>
+              5 ;
+      <http://hotel/incluye#coste>
+              24 ;
+      <http://hotel/incluye#fecha>
+              "2010-11-04T00:00:00"^^xsd:dateTime ;
+      <http://hotel/incluye#ref-codigof>
+              <http://hotel/factura/codigof=5> ;
+      <http://hotel/incluye#ref-cods>
+              <http://hotel/servicio/cods=5> .
+
+<http://hotel/limpieza/numreg=12;numero=200;fecha=2010-09-10T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-09-10T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              200 ;
+      <http://hotel/limpieza#numreg>
+              12 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=200> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=12> .
+
+<http://hotel/usa/cods=5;servicio_cods=3;fecha=2010-09-05T00:00:00>
+      a       db:usa ;
+      <http://hotel/usa#cods>
+              5 ;
+      <http://hotel/usa#fecha>
+              "2010-09-05T00:00:00"^^xsd:dateTime ;
+      <http://hotel/usa#ref-cods>
+              <http://hotel/servicio/cods=5> ;
+      <http://hotel/usa#ref-servicio_cods>
+              <http://hotel/servicio/cods=3> ;
+      <http://hotel/usa#servicio_cods>
+              3 .
+
+<http://hotel/limpieza/numreg=10;numero=101;fecha=2010-08-23T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-08-23T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              101 ;
+      <http://hotel/limpieza#numreg>
+              10 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=101> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=10> .
+
+<http://hotel/factura/codigof=1>
+      a       db:factura ;
+      <http://hotel/factura#codigof>
+              1 ;
+      <http://hotel/factura#dni>
+              "111111   " ;
+      <http://hotel/factura#entrada>
+              "2010-01-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#forma>
+              "efectivo" ;
+      <http://hotel/factura#numero>
+              100 ;
+      <http://hotel/factura#ref-dni>
+              <http://hotel/cliente/dni=111111%20%20%20> ;
+      <http://hotel/factura#ref-forma>
+              <http://hotel/formapago/forma=efectivo> ;
+      <http://hotel/factura#ref-numero>
+              <http://hotel/habitacion/numero=100> ;
+      <http://hotel/factura#salida>
+              "2010-01-03T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#supletoria>
+              30 ;
+      <http://hotel/factura#total>
+              360.0E0 .
+
+<http://hotel/incluye/codigof=9;cods=4;fecha=2010-05-16T00:00:00>
+      a       db:incluye ;
+      <http://hotel/incluye#codigof>
+              9 ;
+      <http://hotel/incluye#cods>
+              4 ;
+      <http://hotel/incluye#coste>
+              8 ;
+      <http://hotel/incluye#fecha>
+              "2010-05-16T00:00:00"^^xsd:dateTime ;
+      <http://hotel/incluye#ref-codigof>
+              <http://hotel/factura/codigof=9> ;
+      <http://hotel/incluye#ref-cods>
+              <http://hotel/servicio/cods=4> .
+
+<http://hotel/reserva/dni=111111%20%20%20;numero=102>
+      a       db:reserva ;
+      <http://hotel/reserva#dni>
+              "111111   " ;
+      <http://hotel/reserva#entrada>
+              "2011-02-03T00:00:00"^^xsd:dateTime ;
+      <http://hotel/reserva#numero>
+              102 ;
+      <http://hotel/reserva#ref-dni>
+              <http://hotel/cliente/dni=111111%20%20%20> ;
+      <http://hotel/reserva#ref-numero>
+              <http://hotel/habitacion/numero=102> ;
+      <http://hotel/reserva#salida>
+              "2011-02-04T00:00:00"^^xsd:dateTime .
+
+<http://hotel/limpieza/numreg=10;numero=101;fecha=2010-08-20T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-08-20T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              101 ;
+      <http://hotel/limpieza#numreg>
+              10 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=101> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=10> .
+
+<http://hotel/formapago/forma=tarjeta>
+      a       db:formapago ;
+      <http://hotel/formapago#comision>
+              1 ;
+      <http://hotel/formapago#forma>
+              "tarjeta" .
+
+<http://hotel/factura/codigof=15>
+      a       db:factura ;
+      <http://hotel/factura#codigof>
+              15 ;
+      <http://hotel/factura#dni>
+              "555555   " ;
+      <http://hotel/factura#entrada>
+              "2010-08-15T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#forma>
+              "tarjeta" ;
+      <http://hotel/factura#numero>
+              203 ;
+      <http://hotel/factura#ref-dni>
+              <http://hotel/cliente/dni=555555%20%20%20> ;
+      <http://hotel/factura#ref-forma>
+              <http://hotel/formapago/forma=tarjeta> ;
+      <http://hotel/factura#ref-numero>
+              <http://hotel/habitacion/numero=203> ;
+      <http://hotel/factura#salida>
+              "2010-08-19T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#supletoria>
+              0 ;
+      <http://hotel/factura#total>
+              363.0E0 .
+
+<http://hotel/factura_prov/codfp=7>
+      a       db:factura_prov ;
+      <http://hotel/factura_prov#codfp>
+              7 ;
+      <http://hotel/factura_prov#fecha>
+              "2010-07-21T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura_prov#importe>
+              1000 ;
+      <http://hotel/factura_prov#nif>
+              "343434L" ;
+      <http://hotel/factura_prov#numreg>
+              1 ;
+      <http://hotel/factura_prov#ref-nif>
+              <http://hotel/proveedor/nif=343434L> ;
+      <http://hotel/factura_prov#ref-numreg>
+              <http://hotel/empleado/numreg=1> .
+
+<http://hotel/precio/tipo=doble>
+      a       db:precio ;
+      <http://hotel/precio#precio>
+              90 ;
+      <http://hotel/precio#tipo>
+              "doble" .
+
+<http://hotel/cliente/dni=111111%20%20%20>
+      a       db:cliente ;
+      <http://hotel/cliente#apellidos>
+              "Aguirre" ;
+      <http://hotel/cliente#dni>
+              "111111   " ;
+      <http://hotel/cliente#domicilio>
+              "Pez 20, 1º A                  " ;
+      <http://hotel/cliente#nombre>
+              "Antonio" ;
+      <http://hotel/cliente#telefono>
+              "999418768" .
+
+<http://hotel/limpieza/numreg=10;numero=204;fecha=2010-09-30T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-09-30T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              204 ;
+      <http://hotel/limpieza#numreg>
+              10 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=204> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=10> .
+
+<http://hotel/empleado/numreg=10>
+      a       db:empleado ;
+      <http://hotel/empleado#incorporacion>
+              "2010-01-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/empleado#nombre>
+              "Antonio Sancho Sancho" ;
+      <http://hotel/empleado#numreg>
+              10 ;
+      <http://hotel/empleado#sueldo>
+              1000 .
+
+<http://hotel/limpieza/numreg=12;numero=204;fecha=2010-09-11T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-09-11T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              204 ;
+      <http://hotel/limpieza#numreg>
+              12 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=204> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=12> .
+
+<http://hotel/empleado/numreg=2>
+      a       db:empleado ;
+      <http://hotel/empleado#cods>
+              2 ;
+      <http://hotel/empleado#incorporacion>
+              "1996-10-23T00:00:00"^^xsd:dateTime ;
+      <http://hotel/empleado#nombre>
+              "Fernando Serrano Vázquez" ;
+      <http://hotel/empleado#numreg>
+              2 ;
+      <http://hotel/empleado#ref-cods>
+              <http://hotel/servicio/cods=2> ;
+      <http://hotel/empleado#sueldo>
+              1000 .
+
+<http://hotel/limpieza/numreg=11;numero=101;fecha=2010-08-10T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-08-10T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              101 ;
+      <http://hotel/limpieza#numreg>
+              11 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=101> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=11> .
+
+<http://hotel/habitacion/numero=100>
+      a       db:habitacion ;
+      <http://hotel/habitacion#bar>
+              "SI" ;
+      <http://hotel/habitacion#numero>
+              100 ;
+      <http://hotel/habitacion#puedesupletoria>
+              "SI" ;
+      <http://hotel/habitacion#ref-tipo>
+              <http://hotel/precio/tipo=doble> ;
+      <http://hotel/habitacion#superficie>
+              17 ;
+      <http://hotel/habitacion#terraza>
+              "SI" ;
+      <http://hotel/habitacion#tipo>
+              "doble" .
+
+<http://hotel/factura/codigof=16>
+      a       db:factura ;
+      <http://hotel/factura#codigof>
+              16 ;
+      <http://hotel/factura#dni>
+              "666666   " ;
+      <http://hotel/factura#entrada>
+              "2010-08-19T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#forma>
+              "efectivo" ;
+      <http://hotel/factura#numero>
+              204 ;
+      <http://hotel/factura#ref-dni>
+              <http://hotel/cliente/dni=666666%20%20%20> ;
+      <http://hotel/factura#ref-forma>
+              <http://hotel/formapago/forma=efectivo> ;
+      <http://hotel/factura#ref-numero>
+              <http://hotel/habitacion/numero=204> ;
+      <http://hotel/factura#salida>
+              "2010-08-21T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#supletoria>
+              0 ;
+      <http://hotel/factura#total>
+              212.0E0 .
+
+<http://hotel/habitacion/numero=101>
+      a       db:habitacion ;
+      <http://hotel/habitacion#bar>
+              "SI" ;
+      <http://hotel/habitacion#numero>
+              101 ;
+      <http://hotel/habitacion#puedesupletoria>
+              "SI" ;
+      <http://hotel/habitacion#ref-tipo>
+              <http://hotel/precio/tipo=doble> ;
+      <http://hotel/habitacion#superficie>
+              17 ;
+      <http://hotel/habitacion#terraza>
+              "SI" ;
+      <http://hotel/habitacion#tipo>
+              "doble" .
+
+<http://hotel/usa/cods=5;servicio_cods=1;fecha=2010-08-30T00:00:00>
+      a       db:usa ;
+      <http://hotel/usa#cods>
+              5 ;
+      <http://hotel/usa#fecha>
+              "2010-08-30T00:00:00"^^xsd:dateTime ;
+      <http://hotel/usa#ref-cods>
+              <http://hotel/servicio/cods=5> ;
+      <http://hotel/usa#ref-servicio_cods>
+              <http://hotel/servicio/cods=1> ;
+      <http://hotel/usa#servicio_cods>
+              1 .
+
+<http://hotel/reserva/dni=777777%20%20%20;numero=204>
+      a       db:reserva ;
+      <http://hotel/reserva#dni>
+              "777777   " ;
+      <http://hotel/reserva#entrada>
+              "2011-03-25T00:00:00"^^xsd:dateTime ;
+      <http://hotel/reserva#numero>
+              204 ;
+      <http://hotel/reserva#ref-dni>
+              <http://hotel/cliente/dni=777777%20%20%20> ;
+      <http://hotel/reserva#ref-numero>
+              <http://hotel/habitacion/numero=204> ;
+      <http://hotel/reserva#salida>
+              "2011-03-27T00:00:00"^^xsd:dateTime .
+
+<http://hotel/usa/cods=5;servicio_cods=1;fecha=2010-09-24T00:00:00>
+      a       db:usa ;
+      <http://hotel/usa#cods>
+              5 ;
+      <http://hotel/usa#fecha>
+              "2010-09-24T00:00:00"^^xsd:dateTime ;
+      <http://hotel/usa#ref-cods>
+              <http://hotel/servicio/cods=5> ;
+      <http://hotel/usa#ref-servicio_cods>
+              <http://hotel/servicio/cods=1> ;
+      <http://hotel/usa#servicio_cods>
+              1 .
+
+<http://hotel/factura/codigof=2>
+      a       db:factura ;
+      <http://hotel/factura#codigof>
+              2 ;
+      <http://hotel/factura#dni>
+              "111111   " ;
+      <http://hotel/factura#entrada>
+              "2010-06-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#forma>
+              "efectivo" ;
+      <http://hotel/factura#numero>
+              100 ;
+      <http://hotel/factura#ref-dni>
+              <http://hotel/cliente/dni=111111%20%20%20> ;
+      <http://hotel/factura#ref-forma>
+              <http://hotel/formapago/forma=efectivo> ;
+      <http://hotel/factura#ref-numero>
+              <http://hotel/habitacion/numero=100> ;
+      <http://hotel/factura#salida>
+              "2010-06-03T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#supletoria>
+              30 ;
+      <http://hotel/factura#total>
+              180.0E0 .
+
+<http://hotel/limpieza/numreg=11;numero=100;fecha=2010-09-01T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-09-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              100 ;
+      <http://hotel/limpieza#numreg>
+              11 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=100> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=11> .
+
+<http://hotel/limpieza/numreg=12;numero=102;fecha=2010-09-10T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-09-10T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              102 ;
+      <http://hotel/limpieza#numreg>
+              12 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=102> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=12> .
+
+<http://hotel/reserva/dni=111111%20%20%20;numero=101>
+      a       db:reserva ;
+      <http://hotel/reserva#dni>
+              "111111   " ;
+      <http://hotel/reserva#entrada>
+              "2011-02-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/reserva#numero>
+              101 ;
+      <http://hotel/reserva#ref-dni>
+              <http://hotel/cliente/dni=111111%20%20%20> ;
+      <http://hotel/reserva#ref-numero>
+              <http://hotel/habitacion/numero=101> ;
+      <http://hotel/reserva#salida>
+              "2011-02-04T00:00:00"^^xsd:dateTime .
+
+<http://hotel/precio/tipo=individual>
+      a       db:precio ;
+      <http://hotel/precio#precio>
+              75 ;
+      <http://hotel/precio#tipo>
+              "individual" .
+
+<http://hotel/incluye/codigof=3;cods=3;fecha=2010-09-03T00:00:00>
+      a       db:incluye ;
+      <http://hotel/incluye#codigof>
+              3 ;
+      <http://hotel/incluye#cods>
+              3 ;
+      <http://hotel/incluye#coste>
+              25 ;
+      <http://hotel/incluye#fecha>
+              "2010-09-03T00:00:00"^^xsd:dateTime ;
+      <http://hotel/incluye#ref-codigof>
+              <http://hotel/factura/codigof=3> ;
+      <http://hotel/incluye#ref-cods>
+              <http://hotel/servicio/cods=3> .
+
+<http://hotel/empleado/numreg=11>
+      a       db:empleado ;
+      <http://hotel/empleado#incorporacion>
+              "2010-01-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/empleado#nombre>
+              "María Gonzalo Fuentes" ;
+      <http://hotel/empleado#numreg>
+              11 ;
+      <http://hotel/empleado#sueldo>
+              1000 .
+
+<http://hotel/factura_prov/codfp=8>
+      a       db:factura_prov ;
+      <http://hotel/factura_prov#codfp>
+              8 ;
+      <http://hotel/factura_prov#fecha>
+              "2010-08-21T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura_prov#importe>
+              765 ;
+      <http://hotel/factura_prov#nif>
+              "343434L" ;
+      <http://hotel/factura_prov#numreg>
+              1 ;
+      <http://hotel/factura_prov#ref-nif>
+              <http://hotel/proveedor/nif=343434L> ;
+      <http://hotel/factura_prov#ref-numreg>
+              <http://hotel/empleado/numreg=1> .
+
+<http://hotel/usa/cods=4;servicio_cods=3;fecha=2010-09-19T00:00:00>
+      a       db:usa ;
+      <http://hotel/usa#cods>
+              4 ;
+      <http://hotel/usa#fecha>
+              "2010-09-19T00:00:00"^^xsd:dateTime ;
+      <http://hotel/usa#ref-cods>
+              <http://hotel/servicio/cods=4> ;
+      <http://hotel/usa#ref-servicio_cods>
+              <http://hotel/servicio/cods=3> ;
+      <http://hotel/usa#servicio_cods>
+              3 .
+
+<http://hotel/incluye/codigof=9;cods=4;fecha=2010-05-15T00:00:00>
+      a       db:incluye ;
+      <http://hotel/incluye#codigof>
+              9 ;
+      <http://hotel/incluye#cods>
+              4 ;
+      <http://hotel/incluye#coste>
+              6 ;
+      <http://hotel/incluye#fecha>
+              "2010-05-15T00:00:00"^^xsd:dateTime ;
+      <http://hotel/incluye#ref-codigof>
+              <http://hotel/factura/codigof=9> ;
+      <http://hotel/incluye#ref-cods>
+              <http://hotel/servicio/cods=4> .
+
+<http://hotel/empleado/numreg=3>
+      a       db:empleado ;
+      <http://hotel/empleado#cods>
+              3 ;
+      <http://hotel/empleado#incorporacion>
+              "2000-01-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/empleado#nombre>
+              "Manuel Pérez Calo" ;
+      <http://hotel/empleado#numreg>
+              3 ;
+      <http://hotel/empleado#ref-cods>
+              <http://hotel/servicio/cods=3> ;
+      <http://hotel/empleado#sueldo>
+              900 .
+
+<http://hotel/factura_prov/codfp=11>
+      a       db:factura_prov ;
+      <http://hotel/factura_prov#codfp>
+              11 ;
+      <http://hotel/factura_prov#fecha>
+              "2010-06-15T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura_prov#importe>
+              2567 ;
+      <http://hotel/factura_prov#nif>
+              "545454Q" ;
+      <http://hotel/factura_prov#numreg>
+              12 ;
+      <http://hotel/factura_prov#ref-nif>
+              <http://hotel/proveedor/nif=545454Q> ;
+      <http://hotel/factura_prov#ref-numreg>
+              <http://hotel/empleado/numreg=12> .
+
+<http://hotel/limpieza/numreg=11;numero=200;fecha=2010-08-10T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-08-10T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              200 ;
+      <http://hotel/limpieza#numreg>
+              11 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=200> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=11> .
+
+<http://hotel/usa/cods=5;servicio_cods=2;fecha=2010-08-18T00:00:00>
+      a       db:usa ;
+      <http://hotel/usa#cods>
+              5 ;
+      <http://hotel/usa#fecha>
+              "2010-08-18T00:00:00"^^xsd:dateTime ;
+      <http://hotel/usa#ref-cods>
+              <http://hotel/servicio/cods=5> ;
+      <http://hotel/usa#ref-servicio_cods>
+              <http://hotel/servicio/cods=2> ;
+      <http://hotel/usa#servicio_cods>
+              2 .
+
+<http://hotel/cliente/dni=666666%20%20%20>
+      a       db:cliente ;
+      <http://hotel/cliente#apellidos>
+              "Rivera Romero" ;
+      <http://hotel/cliente#dni>
+              "666666   " ;
+      <http://hotel/cliente#domicilio>
+              "Avda. de la Paz 30            " ;
+      <http://hotel/cliente#nombre>
+              "Santiago" ;
+      <http://hotel/cliente#telefono>
+              "999111232" .
+
+<http://hotel/limpieza/numreg=10;numero=101;fecha=2010-08-22T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-08-22T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              101 ;
+      <http://hotel/limpieza#numreg>
+              10 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=101> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=10> .
+
+<http://hotel/usa/cods=5;servicio_cods=2;fecha=2010-09-01T00:00:00>
+      a       db:usa ;
+      <http://hotel/usa#cods>
+              5 ;
+      <http://hotel/usa#fecha>
+              "2010-09-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/usa#ref-cods>
+              <http://hotel/servicio/cods=5> ;
+      <http://hotel/usa#ref-servicio_cods>
+              <http://hotel/servicio/cods=2> ;
+      <http://hotel/usa#servicio_cods>
+              2 .
+
+<http://hotel/factura/codigof=17>
+      a       db:factura ;
+      <http://hotel/factura#codigof>
+              17 ;
+      <http://hotel/factura#dni>
+              "666666   " ;
+      <http://hotel/factura#entrada>
+              "2010-08-22T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#forma>
+              "tarjeta" ;
+      <http://hotel/factura#numero>
+              203 ;
+      <http://hotel/factura#ref-dni>
+              <http://hotel/cliente/dni=666666%20%20%20> ;
+      <http://hotel/factura#ref-forma>
+              <http://hotel/formapago/forma=tarjeta> ;
+      <http://hotel/factura#ref-numero>
+              <http://hotel/habitacion/numero=203> ;
+      <http://hotel/factura#salida>
+              "2010-08-24T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#supletoria>
+              0 ;
+      <http://hotel/factura#total>
+              190.0E0 .
+
+<http://hotel/habitacion/numero=102>
+      a       db:habitacion ;
+      <http://hotel/habitacion#bar>
+              "SI" ;
+      <http://hotel/habitacion#numero>
+              102 ;
+      <http://hotel/habitacion#puedesupletoria>
+              "SI" ;
+      <http://hotel/habitacion#ref-tipo>
+              <http://hotel/precio/tipo=individual> ;
+      <http://hotel/habitacion#superficie>
+              17 ;
+      <http://hotel/habitacion#terraza>
+              "SI" ;
+      <http://hotel/habitacion#tipo>
+              "individual" .
+
+<http://hotel/factura/codigof=3>
+      a       db:factura ;
+      <http://hotel/factura#codigof>
+              3 ;
+      <http://hotel/factura#dni>
+              "111111   " ;
+      <http://hotel/factura#entrada>
+              "2010-09-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#forma>
+              "efectivo" ;
+      <http://hotel/factura#numero>
+              100 ;
+      <http://hotel/factura#ref-dni>
+              <http://hotel/cliente/dni=111111%20%20%20> ;
+      <http://hotel/factura#ref-forma>
+              <http://hotel/formapago/forma=efectivo> ;
+      <http://hotel/factura#ref-numero>
+              <http://hotel/habitacion/numero=100> ;
+      <http://hotel/factura#salida>
+              "2010-09-03T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#supletoria>
+              30 ;
+      <http://hotel/factura#total>
+              338.0E0 .
+
+<http://hotel/limpieza/numreg=12;numero=203;fecha=2010-09-11T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-09-11T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              203 ;
+      <http://hotel/limpieza#numreg>
+              12 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=203> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=12> .
+
+<http://hotel/reserva/dni=777777%20%20%20;numero=203>
+      a       db:reserva ;
+      <http://hotel/reserva#dni>
+              "777777   " ;
+      <http://hotel/reserva#entrada>
+              "2011-02-17T00:00:00"^^xsd:dateTime ;
+      <http://hotel/reserva#numero>
+              203 ;
+      <http://hotel/reserva#ref-dni>
+              <http://hotel/cliente/dni=777777%20%20%20> ;
+      <http://hotel/reserva#ref-numero>
+              <http://hotel/habitacion/numero=203> ;
+      <http://hotel/reserva#salida>
+              "2011-02-19T00:00:00"^^xsd:dateTime .
+
+<http://hotel/incluye/codigof=5;cods=5;fecha=2010-11-02T00:00:00>
+      a       db:incluye ;
+      <http://hotel/incluye#codigof>
+              5 ;
+      <http://hotel/incluye#cods>
+              5 ;
+      <http://hotel/incluye#coste>
+              28 ;
+      <http://hotel/incluye#fecha>
+              "2010-11-02T00:00:00"^^xsd:dateTime ;
+      <http://hotel/incluye#ref-codigof>
+              <http://hotel/factura/codigof=5> ;
+      <http://hotel/incluye#ref-cods>
+              <http://hotel/servicio/cods=5> .
+
+<http://hotel/usa/cods=5;servicio_cods=1;fecha=2010-08-25T00:00:00>
+      a       db:usa ;
+      <http://hotel/usa#cods>
+              5 ;
+      <http://hotel/usa#fecha>
+              "2010-08-25T00:00:00"^^xsd:dateTime ;
+      <http://hotel/usa#ref-cods>
+              <http://hotel/servicio/cods=5> ;
+      <http://hotel/usa#ref-servicio_cods>
+              <http://hotel/servicio/cods=1> ;
+      <http://hotel/usa#servicio_cods>
+              1 .
+
+<http://hotel/cliente/dni=222222%20%20%20>
+      a       db:cliente ;
+      <http://hotel/cliente#apellidos>
+              "Anguiano López" ;
+      <http://hotel/cliente#dni>
+              "222222   " ;
+      <http://hotel/cliente#domicilio>
+              "Churruca 2, 6º D              " ;
+      <http://hotel/cliente#nombre>
+              "Jorge" ;
+      <http://hotel/cliente#telefono>
+              "999876737" .
+
+<http://hotel/reserva/dni=999999%20%20%20;numero=200>
+      a       db:reserva ;
+      <http://hotel/reserva#dni>
+              "999999   " ;
+      <http://hotel/reserva#entrada>
+              "2011-02-11T00:00:00"^^xsd:dateTime ;
+      <http://hotel/reserva#numero>
+              200 ;
+      <http://hotel/reserva#ref-dni>
+              <http://hotel/cliente/dni=999999%20%20%20> ;
+      <http://hotel/reserva#ref-numero>
+              <http://hotel/habitacion/numero=200> ;
+      <http://hotel/reserva#salida>
+              "2011-02-15T00:00:00"^^xsd:dateTime .
+
+<http://hotel/servicio/cods=1>
+      a       db:servicio ;
+      <http://hotel/servicio#cods>
+              1 ;
+      <http://hotel/servicio#costeinterno>
+              50 ;
+      <http://hotel/servicio#descripcion>
+              "tintoreria     " ;
+      <http://hotel/servicio#numreg>
+              1 ;
+      <http://hotel/servicio#ref-numreg>
+              <http://hotel/empleado/numreg=1> .
+
+<http://hotel/incluye/codigof=7;cods=6;fecha=2010-11-02T00:00:00>
+      a       db:incluye ;
+      <http://hotel/incluye#codigof>
+              7 ;
+      <http://hotel/incluye#cods>
+              6 ;
+      <http://hotel/incluye#coste>
+              20 ;
+      <http://hotel/incluye#fecha>
+              "2010-11-02T00:00:00"^^xsd:dateTime ;
+      <http://hotel/incluye#ref-codigof>
+              <http://hotel/factura/codigof=7> ;
+      <http://hotel/incluye#ref-cods>
+              <http://hotel/servicio/cods=6> .
+
+<http://hotel/incluye/codigof=9;cods=5;fecha=2010-05-16T00:00:00>
+      a       db:incluye ;
+      <http://hotel/incluye#codigof>
+              9 ;
+      <http://hotel/incluye#cods>
+              5 ;
+      <http://hotel/incluye#coste>
+              24 ;
+      <http://hotel/incluye#fecha>
+              "2010-05-16T00:00:00"^^xsd:dateTime ;
+      <http://hotel/incluye#ref-codigof>
+              <http://hotel/factura/codigof=9> ;
+      <http://hotel/incluye#ref-cods>
+              <http://hotel/servicio/cods=5> .
+
+<http://hotel/incluye/codigof=15;cods=2;fecha=2010-08-15T00:00:00>
+      a       db:incluye ;
+      <http://hotel/incluye#codigof>
+              15 ;
+      <http://hotel/incluye#cods>
+              2 ;
+      <http://hotel/incluye#coste>
+              13 ;
+      <http://hotel/incluye#fecha>
+              "2010-08-15T00:00:00"^^xsd:dateTime ;
+      <http://hotel/incluye#ref-codigof>
+              <http://hotel/factura/codigof=15> ;
+      <http://hotel/incluye#ref-cods>
+              <http://hotel/servicio/cods=2> .
+
+<http://hotel/incluye/codigof=16;cods=5;fecha=2010-08-19T00:00:00>
+      a       db:incluye ;
+      <http://hotel/incluye#codigof>
+              16 ;
+      <http://hotel/incluye#cods>
+              5 ;
+      <http://hotel/incluye#coste>
+              32 ;
+      <http://hotel/incluye#fecha>
+              "2010-08-19T00:00:00"^^xsd:dateTime ;
+      <http://hotel/incluye#ref-codigof>
+              <http://hotel/factura/codigof=16> ;
+      <http://hotel/incluye#ref-cods>
+              <http://hotel/servicio/cods=5> .
+
+<http://hotel/formapago/forma=efectivo>
+      a       db:formapago ;
+      <http://hotel/formapago#comision>
+              0 ;
+      <http://hotel/formapago#forma>
+              "efectivo" .
+
+<http://hotel/factura_prov/codfp=10>
+      a       db:factura_prov ;
+      <http://hotel/factura_prov#codfp>
+              10 ;
+      <http://hotel/factura_prov#fecha>
+              "2010-04-11T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura_prov#importe>
+              2342 ;
+      <http://hotel/factura_prov#nif>
+              "545454Q" ;
+      <http://hotel/factura_prov#numreg>
+              12 ;
+      <http://hotel/factura_prov#ref-nif>
+              <http://hotel/proveedor/nif=545454Q> ;
+      <http://hotel/factura_prov#ref-numreg>
+              <http://hotel/empleado/numreg=12> .
+
+<http://hotel/factura/codigof=5>
+      a       db:factura ;
+      <http://hotel/factura#codigof>
+              5 ;
+      <http://hotel/factura#dni>
+              "333333   " ;
+      <http://hotel/factura#entrada>
+              "2010-11-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#forma>
+              "tarjeta" ;
+      <http://hotel/factura#numero>
+              200 ;
+      <http://hotel/factura#ref-dni>
+              <http://hotel/cliente/dni=333333%20%20%20> ;
+      <http://hotel/factura#ref-forma>
+              <http://hotel/formapago/forma=tarjeta> ;
+      <http://hotel/factura#ref-numero>
+              <http://hotel/habitacion/numero=200> ;
+      <http://hotel/factura#supletoria>
+              0 .
+
+<http://hotel/limpieza/numreg=11;numero=101;fecha=2010-09-10T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-09-10T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              101 ;
+      <http://hotel/limpieza#numreg>
+              11 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=101> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=11> .
+
+<http://hotel/usa/cods=4;servicio_cods=3;fecha=2010-09-05T00:00:00>
+      a       db:usa ;
+      <http://hotel/usa#cods>
+              4 ;
+      <http://hotel/usa#fecha>
+              "2010-09-05T00:00:00"^^xsd:dateTime ;
+      <http://hotel/usa#ref-cods>
+              <http://hotel/servicio/cods=4> ;
+      <http://hotel/usa#ref-servicio_cods>
+              <http://hotel/servicio/cods=3> ;
+      <http://hotel/usa#servicio_cods>
+              3 .
+
+<http://hotel/empleado/numreg=12>
+      a       db:empleado ;
+      <http://hotel/empleado#incorporacion>
+              "2010-01-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/empleado#nombre>
+              "Juana Peláez Trasto" ;
+      <http://hotel/empleado#numreg>
+              12 ;
+      <http://hotel/empleado#sueldo>
+              900 .
+
+<http://hotel/empleado/numreg=8>
+      a       db:empleado ;
+      <http://hotel/empleado#cods>
+              5 ;
+      <http://hotel/empleado#incorporacion>
+              "2010-01-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/empleado#nombre>
+              "Rosa Luigi Paz" ;
+      <http://hotel/empleado#numreg>
+              8 ;
+      <http://hotel/empleado#ref-cods>
+              <http://hotel/servicio/cods=5> ;
+      <http://hotel/empleado#sueldo>
+              1000 .
+
+<http://hotel/usa/cods=5;servicio_cods=4;fecha=2010-09-20T00:00:00>
+      a       db:usa ;
+      <http://hotel/usa#cods>
+              5 ;
+      <http://hotel/usa#fecha>
+              "2010-09-20T00:00:00"^^xsd:dateTime ;
+      <http://hotel/usa#ref-cods>
+              <http://hotel/servicio/cods=5> ;
+      <http://hotel/usa#ref-servicio_cods>
+              <http://hotel/servicio/cods=4> ;
+      <http://hotel/usa#servicio_cods>
+              4 .
+
+<http://hotel/factura_prov/codfp=5>
+      a       db:factura_prov ;
+      <http://hotel/factura_prov#codfp>
+              5 ;
+      <http://hotel/factura_prov#fecha>
+              "2010-03-21T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura_prov#importe>
+              345 ;
+      <http://hotel/factura_prov#nif>
+              "343434L" ;
+      <http://hotel/factura_prov#numreg>
+              1 ;
+      <http://hotel/factura_prov#ref-nif>
+              <http://hotel/proveedor/nif=343434L> ;
+      <http://hotel/factura_prov#ref-numreg>
+              <http://hotel/empleado/numreg=1> .
+
+<http://hotel/empleado/numreg=9>
+      a       db:empleado ;
+      <http://hotel/empleado#cods>
+              6 ;
+      <http://hotel/empleado#incorporacion>
+              "2010-01-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/empleado#nombre>
+              "Rafael Fuertes Cabrera" ;
+      <http://hotel/empleado#numreg>
+              9 ;
+      <http://hotel/empleado#ref-cods>
+              <http://hotel/servicio/cods=6> ;
+      <http://hotel/empleado#sueldo>
+              1100 .
+
+<http://hotel/habitacion/numero=200>
+      a       db:habitacion ;
+      <http://hotel/habitacion#bar>
+              "SI" ;
+      <http://hotel/habitacion#numero>
+              200 ;
+      <http://hotel/habitacion#puedesupletoria>
+              "SI" ;
+      <http://hotel/habitacion#ref-tipo>
+              <http://hotel/precio/tipo=doble> ;
+      <http://hotel/habitacion#superficie>
+              17 ;
+      <http://hotel/habitacion#terraza>
+              "SI" ;
+      <http://hotel/habitacion#tipo>
+              "doble" .
+
+<http://hotel/incluye/codigof=3;cods=2;fecha=2010-09-01T00:00:00>
+      a       db:incluye ;
+      <http://hotel/incluye#codigof>
+              3 ;
+      <http://hotel/incluye#cods>
+              2 ;
+      <http://hotel/incluye#coste>
+              10 ;
+      <http://hotel/incluye#fecha>
+              "2010-09-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/incluye#ref-codigof>
+              <http://hotel/factura/codigof=3> ;
+      <http://hotel/incluye#ref-cods>
+              <http://hotel/servicio/cods=2> .
+
+<http://hotel/factura/codigof=4>
+      a       db:factura ;
+      <http://hotel/factura#codigof>
+              4 ;
+      <http://hotel/factura#dni>
+              "111111   " ;
+      <http://hotel/factura#entrada>
+              "2010-11-02T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#forma>
+              "efectivo" ;
+      <http://hotel/factura#numero>
+              100 ;
+      <http://hotel/factura#ref-dni>
+              <http://hotel/cliente/dni=111111%20%20%20> ;
+      <http://hotel/factura#ref-forma>
+              <http://hotel/formapago/forma=efectivo> ;
+      <http://hotel/factura#ref-numero>
+              <http://hotel/habitacion/numero=100> ;
+      <http://hotel/factura#supletoria>
+              0 .
+
+<http://hotel/limpieza/numreg=10;numero=300;fecha=2010-10-01T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-10-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              300 ;
+      <http://hotel/limpieza#numreg>
+              10 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=300> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=10> .
+
+<http://hotel/limpieza/numreg=12;numero=201;fecha=2010-09-11T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-09-11T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              201 ;
+      <http://hotel/limpieza#numreg>
+              12 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=201> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=12> .
+
+<http://hotel/factura/codigof=10>
+      a       db:factura ;
+      <http://hotel/factura#codigof>
+              10 ;
+      <http://hotel/factura#dni>
+              "333333   " ;
+      <http://hotel/factura#entrada>
+              "2010-08-10T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#forma>
+              "tarjeta" ;
+      <http://hotel/factura#numero>
+              300 ;
+      <http://hotel/factura#ref-dni>
+              <http://hotel/cliente/dni=333333%20%20%20> ;
+      <http://hotel/factura#ref-forma>
+              <http://hotel/formapago/forma=tarjeta> ;
+      <http://hotel/factura#ref-numero>
+              <http://hotel/habitacion/numero=300> ;
+      <http://hotel/factura#salida>
+              "2010-08-13T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#supletoria>
+              0 ;
+      <http://hotel/factura#total>
+              270.0E0 .
+
+<http://hotel/limpieza/numreg=11;numero=100;fecha=2010-08-01T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-08-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              100 ;
+      <http://hotel/limpieza#numreg>
+              11 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=100> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=11> .
+
+<http://hotel/limpieza/numreg=11;numero=301;fecha=2010-01-10T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-01-10T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              301 ;
+      <http://hotel/limpieza#numreg>
+              11 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=301> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=11> .
+
+<http://hotel/limpieza/numreg=10;numero=203;fecha=2010-09-23T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-09-23T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              203 ;
+      <http://hotel/limpieza#numreg>
+              10 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=203> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=10> .
+
+<http://hotel/cliente/dni=999999%20%20%20>
+      a       db:cliente ;
+      <http://hotel/cliente#apellidos>
+              "Fernández Fernández" ;
+      <http://hotel/cliente#dni>
+              "999999   " ;
+      <http://hotel/cliente#domicilio>
+              "Brasil 65, 3º                 " ;
+      <http://hotel/cliente#nombre>
+              "Virginia" ;
+      <http://hotel/cliente#telefono>
+              "999009009" .
+
+<http://hotel/servicio/cods=2>
+      a       db:servicio ;
+      <http://hotel/servicio#cods>
+              2 ;
+      <http://hotel/servicio#costeinterno>
+              30 ;
+      <http://hotel/servicio#descripcion>
+              "plancha        " ;
+      <http://hotel/servicio#numreg>
+              2 ;
+      <http://hotel/servicio#ref-numreg>
+              <http://hotel/empleado/numreg=2> .
+
+<http://hotel/factura_prov/codfp=6>
+      a       db:factura_prov ;
+      <http://hotel/factura_prov#codfp>
+              6 ;
+      <http://hotel/factura_prov#fecha>
+              "2010-05-21T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura_prov#importe>
+              235 ;
+      <http://hotel/factura_prov#nif>
+              "343434L" ;
+      <http://hotel/factura_prov#numreg>
+              1 ;
+      <http://hotel/factura_prov#ref-nif>
+              <http://hotel/proveedor/nif=343434L> ;
+      <http://hotel/factura_prov#ref-numreg>
+              <http://hotel/empleado/numreg=1> .
+
+<http://hotel/limpieza/numreg=11;numero=100;fecha=2010-10-02T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-10-02T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              100 ;
+      <http://hotel/limpieza#numreg>
+              11 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=100> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=11> .
+
+<http://hotel/incluye/codigof=15;cods=4;fecha=2010-08-15T00:00:00>
+      a       db:incluye ;
+      <http://hotel/incluye#codigof>
+              15 ;
+      <http://hotel/incluye#cods>
+              4 ;
+      <http://hotel/incluye#coste>
+              5 ;
+      <http://hotel/incluye#fecha>
+              "2010-08-15T00:00:00"^^xsd:dateTime ;
+      <http://hotel/incluye#ref-codigof>
+              <http://hotel/factura/codigof=15> ;
+      <http://hotel/incluye#ref-cods>
+              <http://hotel/servicio/cods=4> .
+
+<http://hotel/empleado/numreg=1>
+      a       db:empleado ;
+      <http://hotel/empleado#cods>
+              1 ;
+      <http://hotel/empleado#incorporacion>
+              "1996-10-23T00:00:00"^^xsd:dateTime ;
+      <http://hotel/empleado#nombre>
+              "Luisa Blanco Baroja" ;
+      <http://hotel/empleado#numreg>
+              1 ;
+      <http://hotel/empleado#ref-cods>
+              <http://hotel/servicio/cods=1> ;
+      <http://hotel/empleado#sueldo>
+              1000 .
+
+<http://hotel/incluye/codigof=1;cods=2;fecha=2010-01-01T00:00:00>
+      a       db:incluye ;
+      <http://hotel/incluye#codigof>
+              1 ;
+      <http://hotel/incluye#cods>
+              2 ;
+      <http://hotel/incluye#coste>
+              15 ;
+      <http://hotel/incluye#fecha>
+              "2010-01-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/incluye#ref-codigof>
+              <http://hotel/factura/codigof=1> ;
+      <http://hotel/incluye#ref-cods>
+              <http://hotel/servicio/cods=2> .
+
+<http://hotel/cliente/dni=777777%20%20%20>
+      a       db:cliente ;
+      <http://hotel/cliente#apellidos>
+              "González Hernando" ;
+      <http://hotel/cliente#dni>
+              "777777   " ;
+      <http://hotel/cliente#domicilio>
+              "Castellana 290, 9º B          " ;
+      <http://hotel/cliente#nombre>
+              "Pedro" ;
+      <http://hotel/cliente#telefono>
+              "999232221" .
+
+<http://hotel/factura/codigof=6>
+      a       db:factura ;
+      <http://hotel/factura#codigof>
+              6 ;
+      <http://hotel/factura#dni>
+              "999999   " ;
+      <http://hotel/factura#entrada>
+              "2010-10-29T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#forma>
+              "talon" ;
+      <http://hotel/factura#numero>
+              204 ;
+      <http://hotel/factura#ref-dni>
+              <http://hotel/cliente/dni=999999%20%20%20> ;
+      <http://hotel/factura#ref-forma>
+              <http://hotel/formapago/forma=talon> ;
+      <http://hotel/factura#ref-numero>
+              <http://hotel/habitacion/numero=204> ;
+      <http://hotel/factura#supletoria>
+              30 .
+
+<http://hotel/empleado/numreg=13>
+      a       db:empleado ;
+      <http://hotel/empleado#incorporacion>
+              "2010-01-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/empleado#nombre>
+              "Gonzalo Cabezas Muiño" ;
+      <http://hotel/empleado#numreg>
+              13 ;
+      <http://hotel/empleado#sueldo>
+              1500 .
+
+<http://hotel/cliente/dni=555555%20%20%20>
+      a       db:cliente ;
+      <http://hotel/cliente#apellidos>
+              "Gutiérrez González" ;
+      <http://hotel/cliente#dni>
+              "555555   " ;
+      <http://hotel/cliente#domicilio>
+              "Literatos 3, 5º               " ;
+      <http://hotel/cliente#nombre>
+              "Raúl" ;
+      <http://hotel/cliente#telefono>
+              "999876234" .
+
+<http://hotel/habitacion/numero=201>
+      a       db:habitacion ;
+      <http://hotel/habitacion#bar>
+              "SI" ;
+      <http://hotel/habitacion#numero>
+              201 ;
+      <http://hotel/habitacion#puedesupletoria>
+              "NO" ;
+      <http://hotel/habitacion#ref-tipo>
+              <http://hotel/precio/tipo=doble> ;
+      <http://hotel/habitacion#superficie>
+              17 ;
+      <http://hotel/habitacion#terraza>
+              "SI" ;
+      <http://hotel/habitacion#tipo>
+              "doble" .
+
+<http://hotel/limpieza/numreg=11;numero=301;fecha=2010-01-01T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-01-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              301 ;
+      <http://hotel/limpieza#numreg>
+              11 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=301> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=11> .
+
+<http://hotel/limpieza/numreg=11;numero=203;fecha=2010-01-10T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-01-10T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              203 ;
+      <http://hotel/limpieza#numreg>
+              11 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=203> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=11> .
+
+<http://hotel/servicio/cods=3>
+      a       db:servicio ;
+      <http://hotel/servicio#cods>
+              3 ;
+      <http://hotel/servicio#costeinterno>
+              60 ;
+      <http://hotel/servicio#descripcion>
+              "lavanderia     " ;
+      <http://hotel/servicio#numreg>
+              3 ;
+      <http://hotel/servicio#ref-numreg>
+              <http://hotel/empleado/numreg=3> .
+
+<http://hotel/factura/codigof=11>
+      a       db:factura ;
+      <http://hotel/factura#codigof>
+              11 ;
+      <http://hotel/factura#dni>
+              "888888   " ;
+      <http://hotel/factura#entrada>
+              "2010-08-15T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#forma>
+              "tarjeta" ;
+      <http://hotel/factura#numero>
+              102 ;
+      <http://hotel/factura#ref-dni>
+              <http://hotel/cliente/dni=888888%20%20%20> ;
+      <http://hotel/factura#ref-forma>
+              <http://hotel/formapago/forma=tarjeta> ;
+      <http://hotel/factura#ref-numero>
+              <http://hotel/habitacion/numero=102> ;
+      <http://hotel/factura#salida>
+              "2010-08-22T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#supletoria>
+              0 ;
+      <http://hotel/factura#total>
+              525.0E0 .
+
+<http://hotel/cliente/dni=333333%20%20%20>
+      a       db:cliente ;
+      <http://hotel/cliente#apellidos>
+              "Méndez Alonso" ;
+      <http://hotel/cliente#dni>
+              "333333   " ;
+      <http://hotel/cliente#domicilio>
+              "Gran Via 167                  " ;
+      <http://hotel/cliente#nombre>
+              "Pilar" ;
+      <http://hotel/cliente#telefono>
+              "999343543" .
+
+<http://hotel/limpieza/numreg=11;numero=201;fecha=2010-09-10T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-09-10T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              201 ;
+      <http://hotel/limpieza#numreg>
+              11 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=201> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=11> .
+
+<http://hotel/limpieza/numreg=11;numero=301;fecha=2010-01-07T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-01-07T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              301 ;
+      <http://hotel/limpieza#numreg>
+              11 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=301> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=11> .
+
+<http://hotel/limpieza/numreg=12;numero=100;fecha=2010-09-10T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-09-10T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              100 ;
+      <http://hotel/limpieza#numreg>
+              12 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=100> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=12> .
+
+<http://hotel/cliente/dni=000000%20%20%20>
+      a       db:cliente ;
+      <http://hotel/cliente#apellidos>
+              "Vilansó Rodríguez" ;
+      <http://hotel/cliente#dni>
+              "000000   " ;
+      <http://hotel/cliente#domicilio>
+              "General Rodrigos 24           " ;
+      <http://hotel/cliente#nombre>
+              "Francisco" ;
+      <http://hotel/cliente#telefono>
+              "999666565" .
+
+<http://hotel/factura/codigof=7>
+      a       db:factura ;
+      <http://hotel/factura#codigof>
+              7 ;
+      <http://hotel/factura#dni>
+              "555555   " ;
+      <http://hotel/factura#entrada>
+              "2010-11-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#forma>
+              "efectivo" ;
+      <http://hotel/factura#numero>
+              300 ;
+      <http://hotel/factura#ref-dni>
+              <http://hotel/cliente/dni=555555%20%20%20> ;
+      <http://hotel/factura#ref-forma>
+              <http://hotel/formapago/forma=efectivo> ;
+      <http://hotel/factura#ref-numero>
+              <http://hotel/habitacion/numero=300> ;
+      <http://hotel/factura#supletoria>
+              0 .
+
+<http://hotel/limpieza/numreg=12;numero=101;fecha=2010-09-10T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-09-10T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              101 ;
+      <http://hotel/limpieza#numreg>
+              12 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=101> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=12> .
+
+<http://hotel/limpieza/numreg=11;numero=101;fecha=2010-08-14T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-08-14T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              101 ;
+      <http://hotel/limpieza#numreg>
+              11 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=101> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=11> .
+
+<http://hotel/limpieza/numreg=10;numero=102;fecha=2010-08-24T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-08-24T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              102 ;
+      <http://hotel/limpieza#numreg>
+              10 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=102> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=10> .
+
+<http://hotel/empleado/numreg=6>
+      a       db:empleado ;
+      <http://hotel/empleado#cods>
+              5 ;
+      <http://hotel/empleado#incorporacion>
+              "2002-09-13T00:00:00"^^xsd:dateTime ;
+      <http://hotel/empleado#nombre>
+              "Jorge Alonso Alonso" ;
+      <http://hotel/empleado#numreg>
+              6 ;
+      <http://hotel/empleado#ref-cods>
+              <http://hotel/servicio/cods=5> .
+
+<http://hotel/factura_prov/codfp=3>
+      a       db:factura_prov ;
+      <http://hotel/factura_prov#codfp>
+              3 ;
+      <http://hotel/factura_prov#fecha>
+              "2010-05-21T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura_prov#importe>
+              500 ;
+      <http://hotel/factura_prov#nif>
+              "121212T" ;
+      <http://hotel/factura_prov#numreg>
+              8 ;
+      <http://hotel/factura_prov#ref-nif>
+              <http://hotel/proveedor/nif=121212T> ;
+      <http://hotel/factura_prov#ref-numreg>
+              <http://hotel/empleado/numreg=8> .
+
+<http://hotel/limpieza/numreg=11;numero=100;fecha=2010-10-01T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-10-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              100 ;
+      <http://hotel/limpieza#numreg>
+              11 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=100> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=11> .
+
+<http://hotel/habitacion/numero=202>
+      a       db:habitacion ;
+      <http://hotel/habitacion#bar>
+              "SI" ;
+      <http://hotel/habitacion#numero>
+              202 ;
+      <http://hotel/habitacion#puedesupletoria>
+              "NO" ;
+      <http://hotel/habitacion#ref-tipo>
+              <http://hotel/precio/tipo=individual> ;
+      <http://hotel/habitacion#superficie>
+              15 ;
+      <http://hotel/habitacion#terraza>
+              "SI" ;
+      <http://hotel/habitacion#tipo>
+              "individual" .
+
+<http://hotel/incluye/codigof=5;cods=5;fecha=2010-11-01T00:00:00>
+      a       db:incluye ;
+      <http://hotel/incluye#codigof>
+              5 ;
+      <http://hotel/incluye#cods>
+              5 ;
+      <http://hotel/incluye#coste>
+              25 ;
+      <http://hotel/incluye#fecha>
+              "2010-11-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/incluye#ref-codigof>
+              <http://hotel/factura/codigof=5> ;
+      <http://hotel/incluye#ref-cods>
+              <http://hotel/servicio/cods=5> .
+
+<http://hotel/servicio/cods=4>
+      a       db:servicio ;
+      <http://hotel/servicio#cods>
+              4 ;
+      <http://hotel/servicio#costeinterno>
+              15 ;
+      <http://hotel/servicio#descripcion>
+              "bar            " ;
+      <http://hotel/servicio#numreg>
+              4 ;
+      <http://hotel/servicio#ref-numreg>
+              <http://hotel/empleado/numreg=4> .
+
+<http://hotel/usa/cods=5;servicio_cods=4;fecha=2010-09-29T00:00:00>
+      a       db:usa ;
+      <http://hotel/usa#cods>
+              5 ;
+      <http://hotel/usa#fecha>
+              "2010-09-29T00:00:00"^^xsd:dateTime ;
+      <http://hotel/usa#ref-cods>
+              <http://hotel/servicio/cods=5> ;
+      <http://hotel/usa#ref-servicio_cods>
+              <http://hotel/servicio/cods=4> ;
+      <http://hotel/usa#servicio_cods>
+              4 .
+
+<http://hotel/usa/cods=4;servicio_cods=2;fecha=2010-09-17T00:00:00>
+      a       db:usa ;
+      <http://hotel/usa#cods>
+              4 ;
+      <http://hotel/usa#fecha>
+              "2010-09-17T00:00:00"^^xsd:dateTime ;
+      <http://hotel/usa#ref-cods>
+              <http://hotel/servicio/cods=4> ;
+      <http://hotel/usa#ref-servicio_cods>
+              <http://hotel/servicio/cods=2> ;
+      <http://hotel/usa#servicio_cods>
+              2 .
+
+<http://hotel/factura/codigof=12>
+      a       db:factura ;
+      <http://hotel/factura#codigof>
+              12 ;
+      <http://hotel/factura#dni>
+              "444444   " ;
+      <http://hotel/factura#entrada>
+              "2010-12-23T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#forma>
+              "talon" ;
+      <http://hotel/factura#numero>
+              201 ;
+      <http://hotel/factura#ref-dni>
+              <http://hotel/cliente/dni=444444%20%20%20> ;
+      <http://hotel/factura#ref-forma>
+              <http://hotel/formapago/forma=talon> ;
+      <http://hotel/factura#ref-numero>
+              <http://hotel/habitacion/numero=201> ;
+      <http://hotel/factura#salida>
+              "2010-12-24T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#supletoria>
+              0 ;
+      <http://hotel/factura#total>
+              90.0E0 .
+
+<http://hotel/limpieza/numreg=11;numero=102;fecha=2010-08-15T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-08-15T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              102 ;
+      <http://hotel/limpieza#numreg>
+              11 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=102> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=11> .
+
+<http://hotel/cliente/dni=888888%20%20%20>
+      a       db:cliente ;
+      <http://hotel/cliente#apellidos>
+              "Díaz Martín" ;
+      <http://hotel/cliente#dni>
+              "888888   " ;
+      <http://hotel/cliente#domicilio>
+              "Cuba 1                        " ;
+      <http://hotel/cliente#nombre>
+              "Antonio" ;
+      <http://hotel/cliente#telefono>
+              "999444554" .
+
+<http://hotel/limpieza/numreg=12;numero=300;fecha=2010-09-12T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-09-12T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              300 ;
+      <http://hotel/limpieza#numreg>
+              12 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=300> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=12> .
+
+<http://hotel/limpieza/numreg=12;numero=301;fecha=2010-09-12T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-09-12T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              301 ;
+      <http://hotel/limpieza#numreg>
+              12 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=301> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=12> .
+
+<http://hotel/limpieza/numreg=11;numero=204;fecha=2010-01-10T00:00:00>
+      a       db:limpieza ;
+      <http://hotel/limpieza#fecha>
+              "2010-01-10T00:00:00"^^xsd:dateTime ;
+      <http://hotel/limpieza#numero>
+              204 ;
+      <http://hotel/limpieza#numreg>
+              11 ;
+      <http://hotel/limpieza#ref-numero>
+              <http://hotel/habitacion/numero=204> ;
+      <http://hotel/limpieza#ref-numreg>
+              <http://hotel/empleado/numreg=11> .
+
+<http://hotel/incluye/codigof=13;cods=2;fecha=2010-05-04T00:00:00>
+      a       db:incluye ;
+      <http://hotel/incluye#codigof>
+              13 ;
+      <http://hotel/incluye#cods>
+              2 ;
+      <http://hotel/incluye#coste>
+              10 ;
+      <http://hotel/incluye#fecha>
+              "2010-05-04T00:00:00"^^xsd:dateTime ;
+      <http://hotel/incluye#ref-codigof>
+              <http://hotel/factura/codigof=13> ;
+      <http://hotel/incluye#ref-cods>
+              <http://hotel/servicio/cods=2> .
+
+<http://hotel/incluye/codigof=15;cods=5;fecha=2010-08-15T00:00:00>
+      a       db:incluye ;
+      <http://hotel/incluye#codigof>
+              15 ;
+      <http://hotel/incluye#cods>
+              5 ;
+      <http://hotel/incluye#coste>
+              45 ;
+      <http://hotel/incluye#fecha>
+              "2010-08-15T00:00:00"^^xsd:dateTime ;
+      <http://hotel/incluye#ref-codigof>
+              <http://hotel/factura/codigof=15> ;
+      <http://hotel/incluye#ref-cods>
+              <http://hotel/servicio/cods=5> .
+
+<http://hotel/factura/codigof=8>
+      a       db:factura ;
+      <http://hotel/factura#codigof>
+              8 ;
+      <http://hotel/factura#dni>
+              "777777   " ;
+      <http://hotel/factura#entrada>
+              "2010-10-30T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#forma>
+              "tarjeta" ;
+      <http://hotel/factura#numero>
+              301 ;
+      <http://hotel/factura#ref-dni>
+              <http://hotel/cliente/dni=777777%20%20%20> ;
+      <http://hotel/factura#ref-forma>
+              <http://hotel/formapago/forma=tarjeta> ;
+      <http://hotel/factura#ref-numero>
+              <http://hotel/habitacion/numero=301> ;
+      <http://hotel/factura#supletoria>
+              30 .
+
+<http://hotel/incluye/codigof=17;cods=5;fecha=2010-08-23T00:00:00>
+      a       db:incluye ;
+      <http://hotel/incluye#codigof>
+              17 ;
+      <http://hotel/incluye#cods>
+              5 ;
+      <http://hotel/incluye#coste>
+              30 ;
+      <http://hotel/incluye#fecha>
+              "2010-08-23T00:00:00"^^xsd:dateTime ;
+      <http://hotel/incluye#ref-codigof>
+              <http://hotel/factura/codigof=17> ;
+      <http://hotel/incluye#ref-cods>
+              <http://hotel/servicio/cods=5> .
+
+<http://hotel/empleado/numreg=7>
+      a       db:empleado ;
+      <http://hotel/empleado#cods>
+              5 ;
+      <http://hotel/empleado#incorporacion>
+              "2010-01-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/empleado#nombre>
+              "Fernando Soaje Alvarez" ;
+      <http://hotel/empleado#numreg>
+              7 ;
+      <http://hotel/empleado#ref-cods>
+              <http://hotel/servicio/cods=5> .
+
+<http://hotel/factura_prov/codfp=4>
+      a       db:factura_prov ;
+      <http://hotel/factura_prov#codfp>
+              4 ;
+      <http://hotel/factura_prov#fecha>
+              "2010-06-21T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura_prov#importe>
+              976 ;
+      <http://hotel/factura_prov#nif>
+              "121212T" ;
+      <http://hotel/factura_prov#numreg>
+              8 ;
+      <http://hotel/factura_prov#ref-nif>
+              <http://hotel/proveedor/nif=121212T> ;
+      <http://hotel/factura_prov#ref-numreg>
+              <http://hotel/empleado/numreg=8> .
+
+<http://hotel/habitacion/numero=300>
+      a       db:habitacion ;
+      <http://hotel/habitacion#bar>
+              "NO" ;
+      <http://hotel/habitacion#numero>
+              300 ;
+      <http://hotel/habitacion#puedesupletoria>
+              "SI" ;
+      <http://hotel/habitacion#ref-tipo>
+              <http://hotel/precio/tipo=doble> ;
+      <http://hotel/habitacion#superficie>
+              17 ;
+      <http://hotel/habitacion#terraza>
+              "SI" ;
+      <http://hotel/habitacion#tipo>
+              "doble" .
+
+<http://hotel/habitacion/numero=203>
+      a       db:habitacion ;
+      <http://hotel/habitacion#bar>
+              "NO" ;
+      <http://hotel/habitacion#numero>
+              203 ;
+      <http://hotel/habitacion#puedesupletoria>
+              "SI" ;
+      <http://hotel/habitacion#ref-tipo>
+              <http://hotel/precio/tipo=individual> ;
+      <http://hotel/habitacion#superficie>
+              15 ;
+      <http://hotel/habitacion#terraza>
+              "SI" ;
+      <http://hotel/habitacion#tipo>
+              "individual" .
+
+<http://hotel/reserva/dni=222222%20%20%20;numero=300>
+      a       db:reserva ;
+      <http://hotel/reserva#dni>
+              "222222   " ;
+      <http://hotel/reserva#entrada>
+              "2011-02-02T00:00:00"^^xsd:dateTime ;
+      <http://hotel/reserva#numero>
+              300 ;
+      <http://hotel/reserva#ref-dni>
+              <http://hotel/cliente/dni=222222%20%20%20> ;
+      <http://hotel/reserva#ref-numero>
+              <http://hotel/habitacion/numero=300> ;
+      <http://hotel/reserva#salida>
+              "2011-02-06T00:00:00"^^xsd:dateTime .
+
+<http://hotel/cliente/dni=444444%20%20%20>
+      a       db:cliente ;
+      <http://hotel/cliente#apellidos>
+              "Rubio del Val" ;
+      <http://hotel/cliente#dni>
+              "444444   " ;
+      <http://hotel/cliente#domicilio>
+              "Brasil 63, 2º A               " ;
+      <http://hotel/cliente#nombre>
+              "Azucena" ;
+      <http://hotel/cliente#telefono>
+              "999456765" .
+
+<http://hotel/servicio/cods=5>
+      a       db:servicio ;
+      <http://hotel/servicio#cods>
+              5 ;
+      <http://hotel/servicio#costeinterno>
+              50 ;
+      <http://hotel/servicio#descripcion>
+              "restaurante    " ;
+      <http://hotel/servicio#numreg>
+              8 ;
+      <http://hotel/servicio#ref-numreg>
+              <http://hotel/empleado/numreg=8> .
+
+<http://hotel/usa/cods=4;servicio_cods=2;fecha=2010-08-29T00:00:00>
+      a       db:usa ;
+      <http://hotel/usa#cods>
+              4 ;
+      <http://hotel/usa#fecha>
+              "2010-08-29T00:00:00"^^xsd:dateTime ;
+      <http://hotel/usa#ref-cods>
+              <http://hotel/servicio/cods=4> ;
+      <http://hotel/usa#ref-servicio_cods>
+              <http://hotel/servicio/cods=2> ;
+      <http://hotel/usa#servicio_cods>
+              2 .
+
+<http://hotel/factura/codigof=13>
+      a       db:factura ;
+      <http://hotel/factura#codigof>
+              13 ;
+      <http://hotel/factura#dni>
+              "999999   " ;
+      <http://hotel/factura#entrada>
+              "2010-05-01T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#forma>
+              "efectivo" ;
+      <http://hotel/factura#numero>
+              300 ;
+      <http://hotel/factura#ref-dni>
+              <http://hotel/cliente/dni=999999%20%20%20> ;
+      <http://hotel/factura#ref-forma>
+              <http://hotel/formapago/forma=efectivo> ;
+      <http://hotel/factura#ref-numero>
+              <http://hotel/habitacion/numero=300> ;
+      <http://hotel/factura#salida>
+              "2010-05-05T00:00:00"^^xsd:dateTime ;
+      <http://hotel/factura#supletoria>
+              0 ;
+      <http://hotel/factura#total>
+              380.0E0 .

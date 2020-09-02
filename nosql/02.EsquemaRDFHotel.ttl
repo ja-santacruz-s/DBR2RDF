@@ -1,0 +1,522 @@
+@prefix map: <#> .
+@prefix db: <> .
+@prefix vocab: <vocab/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix jdbc: <http://d2rq.org/terms/jdbc/> .
+
+map:Configuration a d2rq:Configuration;
+	d2rq:serveVocabulary false.
+
+map:database a d2rq:Database;
+	d2rq:jdbcDriver "org.postgresql.Driver";
+	d2rq:jdbcDSN "jdbc:postgresql://localhost:5432/hotel";
+	d2rq:username "postgres";
+	d2rq:password "123abc";
+	.
+
+# Table cliente
+map:cliente a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "cliente/dni=@@cliente.dni|encode@@";
+	d2rq:class <cliente>;
+	.
+map:cliente_dni a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:cliente;
+	d2rq:property <cliente#dni>;
+	d2rq:column "cliente.dni";
+	.
+map:cliente_nombre a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:cliente;
+	d2rq:property <cliente#nombre>;
+	d2rq:column "cliente.nombre";
+	.
+map:cliente_apellidos a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:cliente;
+	d2rq:property <cliente#apellidos>;
+	d2rq:column "cliente.apellidos";
+	.
+map:cliente_domicilio a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:cliente;
+	d2rq:property <cliente#domicilio>;
+	d2rq:column "cliente.domicilio";
+	.
+map:cliente_telefono a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:cliente;
+	d2rq:property <cliente#telefono>;
+	d2rq:column "cliente.telefono";
+	.
+
+# Table empleado
+map:empleado a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "empleado/numreg=@@empleado.numreg@@";
+	d2rq:class <empleado>;
+	.
+map:empleado_numreg a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:empleado;
+	d2rq:property <empleado#numreg>;
+	d2rq:column "empleado.numreg";
+	d2rq:datatype xsd:integer;
+	.
+map:empleado_nombre a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:empleado;
+	d2rq:property <empleado#nombre>;
+	d2rq:column "empleado.nombre";
+	.
+map:empleado_incorporacion a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:empleado;
+	d2rq:property <empleado#incorporacion>;
+	d2rq:column "empleado.incorporacion";
+	d2rq:datatype xsd:dateTime;
+	.
+map:empleado_sueldo a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:empleado;
+	d2rq:property <empleado#sueldo>;
+	d2rq:column "empleado.sueldo";
+	d2rq:datatype xsd:integer;
+	.
+map:empleado_cods a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:empleado;
+	d2rq:property <empleado#cods>;
+	d2rq:column "empleado.cods";
+	d2rq:datatype xsd:integer;
+	.
+map:empleado_cods__ref a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:empleado;
+	d2rq:property <empleado#ref-cods>;
+	d2rq:refersToClassMap map:servicio;
+	d2rq:join "empleado.cods => servicio.cods";
+	.
+
+# Table factura
+map:factura a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "factura/codigof=@@factura.codigof@@";
+	d2rq:class <factura>;
+	.
+map:factura_codigof a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:factura;
+	d2rq:property <factura#codigof>;
+	d2rq:column "factura.codigof";
+	d2rq:datatype xsd:integer;
+	.
+map:factura_entrada a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:factura;
+	d2rq:property <factura#entrada>;
+	d2rq:column "factura.entrada";
+	d2rq:datatype xsd:dateTime;
+	.
+map:factura_salida a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:factura;
+	d2rq:property <factura#salida>;
+	d2rq:column "factura.salida";
+	d2rq:datatype xsd:dateTime;
+	.
+map:factura_dni a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:factura;
+	d2rq:property <factura#dni>;
+	d2rq:column "factura.dni";
+	.
+map:factura_numero a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:factura;
+	d2rq:property <factura#numero>;
+	d2rq:column "factura.numero";
+	d2rq:datatype xsd:integer;
+	.
+map:factura_supletoria a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:factura;
+	d2rq:property <factura#supletoria>;
+	d2rq:column "factura.supletoria";
+	d2rq:datatype xsd:integer;
+	.
+map:factura_forma a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:factura;
+	d2rq:property <factura#forma>;
+	d2rq:column "factura.forma";
+	.
+map:factura_total a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:factura;
+	d2rq:property <factura#total>;
+	d2rq:column "factura.total";
+	d2rq:datatype xsd:double;
+	.
+map:factura_dni__ref a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:factura;
+	d2rq:property <factura#ref-dni>;
+	d2rq:refersToClassMap map:cliente;
+	d2rq:join "factura.dni => cliente.dni";
+	.
+map:factura_forma__ref a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:factura;
+	d2rq:property <factura#ref-forma>;
+	d2rq:refersToClassMap map:formapago;
+	d2rq:join "factura.forma => formapago.forma";
+	.
+map:factura_numero__ref a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:factura;
+	d2rq:property <factura#ref-numero>;
+	d2rq:refersToClassMap map:habitacion;
+	d2rq:join "factura.numero => habitacion.numero";
+	.
+
+# Table factura_prov
+map:factura_prov a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "factura_prov/codfp=@@factura_prov.codfp@@";
+	d2rq:class <factura_prov>;
+	.
+map:factura_prov_codfp a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:factura_prov;
+	d2rq:property <factura_prov#codfp>;
+	d2rq:column "factura_prov.codfp";
+	d2rq:datatype xsd:integer;
+	.
+map:factura_prov_fecha a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:factura_prov;
+	d2rq:property <factura_prov#fecha>;
+	d2rq:column "factura_prov.fecha";
+	d2rq:datatype xsd:dateTime;
+	.
+map:factura_prov_importe a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:factura_prov;
+	d2rq:property <factura_prov#importe>;
+	d2rq:column "factura_prov.importe";
+	d2rq:datatype xsd:integer;
+	.
+map:factura_prov_nif a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:factura_prov;
+	d2rq:property <factura_prov#nif>;
+	d2rq:column "factura_prov.nif";
+	.
+map:factura_prov_numreg a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:factura_prov;
+	d2rq:property <factura_prov#numreg>;
+	d2rq:column "factura_prov.numreg";
+	d2rq:datatype xsd:integer;
+	.
+map:factura_prov_numreg__ref a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:factura_prov;
+	d2rq:property <factura_prov#ref-numreg>;
+	d2rq:refersToClassMap map:empleado;
+	d2rq:join "factura_prov.numreg => empleado.numreg";
+	.
+map:factura_prov_nif__ref a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:factura_prov;
+	d2rq:property <factura_prov#ref-nif>;
+	d2rq:refersToClassMap map:proveedor;
+	d2rq:join "factura_prov.nif => proveedor.nif";
+	.
+
+# Table formapago
+map:formapago a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "formapago/forma=@@formapago.forma|encode@@";
+	d2rq:class <formapago>;
+	.
+map:formapago_forma a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:formapago;
+	d2rq:property <formapago#forma>;
+	d2rq:column "formapago.forma";
+	.
+map:formapago_comision a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:formapago;
+	d2rq:property <formapago#comision>;
+	d2rq:column "formapago.comision";
+	d2rq:datatype xsd:integer;
+	.
+
+# Table habitacion
+map:habitacion a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "habitacion/numero=@@habitacion.numero@@";
+	d2rq:class <habitacion>;
+	.
+map:habitacion_numero a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:habitacion;
+	d2rq:property <habitacion#numero>;
+	d2rq:column "habitacion.numero";
+	d2rq:datatype xsd:integer;
+	.
+map:habitacion_superficie a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:habitacion;
+	d2rq:property <habitacion#superficie>;
+	d2rq:column "habitacion.superficie";
+	d2rq:datatype xsd:integer;
+	.
+map:habitacion_bar a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:habitacion;
+	d2rq:property <habitacion#bar>;
+	d2rq:column "habitacion.bar";
+	.
+map:habitacion_terraza a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:habitacion;
+	d2rq:property <habitacion#terraza>;
+	d2rq:column "habitacion.terraza";
+	.
+map:habitacion_puedesupletoria a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:habitacion;
+	d2rq:property <habitacion#puedesupletoria>;
+	d2rq:column "habitacion.puedesupletoria";
+	.
+map:habitacion_tipo a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:habitacion;
+	d2rq:property <habitacion#tipo>;
+	d2rq:column "habitacion.tipo";
+	.
+map:habitacion_tipo__ref a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:habitacion;
+	d2rq:property <habitacion#ref-tipo>;
+	d2rq:refersToClassMap map:precio;
+	d2rq:join "habitacion.tipo => precio.tipo";
+	.
+
+# Table incluye
+map:incluye a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "incluye/codigof=@@incluye.codigof@@;cods=@@incluye.cods@@;fecha=@@incluye.fecha@@";
+	d2rq:class <incluye>;
+	.
+map:incluye_codigof a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:incluye;
+	d2rq:property <incluye#codigof>;
+	d2rq:column "incluye.codigof";
+	d2rq:datatype xsd:integer;
+	.
+map:incluye_cods a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:incluye;
+	d2rq:property <incluye#cods>;
+	d2rq:column "incluye.cods";
+	d2rq:datatype xsd:integer;
+	.
+map:incluye_coste a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:incluye;
+	d2rq:property <incluye#coste>;
+	d2rq:column "incluye.coste";
+	d2rq:datatype xsd:integer;
+	.
+map:incluye_fecha a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:incluye;
+	d2rq:property <incluye#fecha>;
+	d2rq:column "incluye.fecha";
+	d2rq:datatype xsd:dateTime;
+	.
+map:incluye_cods__ref a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:incluye;
+	d2rq:property <incluye#ref-cods>;
+	d2rq:refersToClassMap map:servicio;
+	d2rq:join "incluye.cods => servicio.cods";
+	.
+map:incluye_codigof__ref a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:incluye;
+	d2rq:property <incluye#ref-codigof>;
+	d2rq:refersToClassMap map:factura;
+	d2rq:join "incluye.codigof => factura.codigof";
+	.
+
+# Table limpieza
+map:limpieza a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "limpieza/numreg=@@limpieza.numreg@@;numero=@@limpieza.numero@@;fecha=@@limpieza.fecha@@";
+	d2rq:class <limpieza>;
+	.
+map:limpieza_numreg a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:limpieza;
+	d2rq:property <limpieza#numreg>;
+	d2rq:column "limpieza.numreg";
+	d2rq:datatype xsd:integer;
+	.
+map:limpieza_numero a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:limpieza;
+	d2rq:property <limpieza#numero>;
+	d2rq:column "limpieza.numero";
+	d2rq:datatype xsd:integer;
+	.
+map:limpieza_fecha a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:limpieza;
+	d2rq:property <limpieza#fecha>;
+	d2rq:column "limpieza.fecha";
+	d2rq:datatype xsd:dateTime;
+	.
+map:limpieza_numero__ref a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:limpieza;
+	d2rq:property <limpieza#ref-numero>;
+	d2rq:refersToClassMap map:habitacion;
+	d2rq:join "limpieza.numero => habitacion.numero";
+	.
+map:limpieza_numreg__ref a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:limpieza;
+	d2rq:property <limpieza#ref-numreg>;
+	d2rq:refersToClassMap map:empleado;
+	d2rq:join "limpieza.numreg => empleado.numreg";
+	.
+
+# Table precio
+map:precio a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "precio/tipo=@@precio.tipo|encode@@";
+	d2rq:class <precio>;
+	.
+map:precio_tipo a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:precio;
+	d2rq:property <precio#tipo>;
+	d2rq:column "precio.tipo";
+	.
+map:precio_precio a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:precio;
+	d2rq:property <precio#precio>;
+	d2rq:column "precio.precio";
+	d2rq:datatype xsd:integer;
+	.
+
+# Table proveedor
+map:proveedor a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "proveedor/nif=@@proveedor.nif|encode@@";
+	d2rq:class <proveedor>;
+	.
+map:proveedor_nif a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:proveedor;
+	d2rq:property <proveedor#nif>;
+	d2rq:column "proveedor.nif";
+	.
+map:proveedor_nombre a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:proveedor;
+	d2rq:property <proveedor#nombre>;
+	d2rq:column "proveedor.nombre";
+	.
+map:proveedor_direccion a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:proveedor;
+	d2rq:property <proveedor#direccion>;
+	d2rq:column "proveedor.direccion";
+	.
+map:proveedor_numreg a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:proveedor;
+	d2rq:property <proveedor#numreg>;
+	d2rq:column "proveedor.numreg";
+	d2rq:datatype xsd:integer;
+	.
+map:proveedor_numreg__ref a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:proveedor;
+	d2rq:property <proveedor#ref-numreg>;
+	d2rq:refersToClassMap map:empleado;
+	d2rq:join "proveedor.numreg => empleado.numreg";
+	.
+
+# Table reserva
+map:reserva a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "reserva/dni=@@reserva.dni|encode@@;numero=@@reserva.numero@@";
+	d2rq:class <reserva>;
+	.
+map:reserva_dni a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:reserva;
+	d2rq:property <reserva#dni>;
+	d2rq:column "reserva.dni";
+	.
+map:reserva_numero a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:reserva;
+	d2rq:property <reserva#numero>;
+	d2rq:column "reserva.numero";
+	d2rq:datatype xsd:integer;
+	.
+map:reserva_entrada a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:reserva;
+	d2rq:property <reserva#entrada>;
+	d2rq:column "reserva.entrada";
+	d2rq:datatype xsd:dateTime;
+	.
+map:reserva_salida a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:reserva;
+	d2rq:property <reserva#salida>;
+	d2rq:column "reserva.salida";
+	d2rq:datatype xsd:dateTime;
+	.
+map:reserva_numero__ref a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:reserva;
+	d2rq:property <reserva#ref-numero>;
+	d2rq:refersToClassMap map:habitacion;
+	d2rq:join "reserva.numero => habitacion.numero";
+	.
+map:reserva_dni__ref a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:reserva;
+	d2rq:property <reserva#ref-dni>;
+	d2rq:refersToClassMap map:cliente;
+	d2rq:join "reserva.dni => cliente.dni";
+	.
+
+# Table servicio
+map:servicio a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "servicio/cods=@@servicio.cods@@";
+	d2rq:class <servicio>;
+	.
+map:servicio_cods a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:servicio;
+	d2rq:property <servicio#cods>;
+	d2rq:column "servicio.cods";
+	d2rq:datatype xsd:integer;
+	.
+map:servicio_descripcion a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:servicio;
+	d2rq:property <servicio#descripcion>;
+	d2rq:column "servicio.descripcion";
+	.
+map:servicio_costeinterno a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:servicio;
+	d2rq:property <servicio#costeinterno>;
+	d2rq:column "servicio.costeinterno";
+	d2rq:datatype xsd:integer;
+	.
+map:servicio_numreg a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:servicio;
+	d2rq:property <servicio#numreg>;
+	d2rq:column "servicio.numreg";
+	d2rq:datatype xsd:integer;
+	.
+map:servicio_numreg__ref a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:servicio;
+	d2rq:property <servicio#ref-numreg>;
+	d2rq:refersToClassMap map:empleado;
+	d2rq:join "servicio.numreg => empleado.numreg";
+	.
+
+# Table usa
+map:usa a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "usa/cods=@@usa.cods@@;servicio_cods=@@usa.servicio_cods@@;fecha=@@usa.fecha@@";
+	d2rq:class <usa>;
+	.
+map:usa_cods a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:usa;
+	d2rq:property <usa#cods>;
+	d2rq:column "usa.cods";
+	d2rq:datatype xsd:integer;
+	.
+map:usa_servicio_cods a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:usa;
+	d2rq:property <usa#servicio_cods>;
+	d2rq:column "usa.servicio_cods";
+	d2rq:datatype xsd:integer;
+	.
+map:usa_fecha a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:usa;
+	d2rq:property <usa#fecha>;
+	d2rq:column "usa.fecha";
+	d2rq:datatype xsd:dateTime;
+	.
+map:usa_servicio_cods__ref a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:usa;
+	d2rq:property <usa#ref-servicio_cods>;
+	d2rq:refersToClassMap map:servicio;
+	d2rq:join "usa.servicio_cods => servicio.cods";
+	.
+map:usa_cods__ref a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:usa;
+	d2rq:property <usa#ref-cods>;
+	d2rq:refersToClassMap map:servicio;
+	d2rq:join "usa.cods => servicio.cods";
+	.
+
